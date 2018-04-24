@@ -1,7 +1,7 @@
 // JavaScript Document
 $(document).ready(function(){
 	"use strict";
-	$(".main>a").hover(function(){
+	$(".main>a").click(function(){
 		var ulNode = $(this).next("ul");
 //		if (ulNode.css("display")==="none"){
 //			ulNode.css("display","block");
