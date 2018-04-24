@@ -1,0 +1,35 @@
+/* CSS Document */
+ul,li{
+	list-style: none;
+}
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+.main {
+	float: left;
+	background-color: aqua;
+	width: 100px;
+}
+
+li{
+	background-color: blueviolet;
+}
+
+a {
+	text-decoration: none;
+	padding-left: 20px;
+	display: block;
+	width: 80px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.main li a {
+	color: aliceblue;
+}
+
+.main ul{
+	display: none;
+}
