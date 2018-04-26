@@ -2,6 +2,7 @@
 ul,li{
 	list-style: none;
 }
+
 ul {
 	padding: 0;
 	margin: 0;
@@ -10,12 +11,12 @@ ul {
 
 .main {
 	float: left;
-	background-color: aqua;
+	background-color: #FF9800;
 	width: 100px;
 }
 
 li{
-	background-color: blueviolet;
+	background-color: #FFC107;
 }
 
 a {
@@ -27,8 +28,12 @@ a {
 	padding-bottom: 3px;
 }
 
+.main a {
+	color: rgba(0,0,0,0.9);
+}
+
 .main li a {
-	color: aliceblue;
+	color: white;
 }
 
 .main ul{
