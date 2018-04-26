@@ -1,0 +1,33 @@
+/* CSS Document */
+.button1 {
+	width:339px;
+	line-height: 20px;
+}
+
+.head {
+	margin:0;
+	width: 100%;
+	height: 500px;
+}
+
+.navbar {
+	z-index:inherit;
+	position:fixed;
+	opacity: 0.8;
+}
+
+.navbar:hover  {
+	opacity: 1
+}
+
+.map {
+	height: 500px;
+	background-color:#353535;
+	position:relative;
+	z-index: -1;
+}
+
+.headmenu {
+	display: none;
+	list-style: none;
+} 
