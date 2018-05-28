@@ -1,43 +1,419 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>JASONPANG</title>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/menu.js"></script>
-	<link href="css/menu.css" rel="stylesheet">
-	<style type="text/css">
-		body{
-			margin: 0;
-			padding: 0;
-		}
-	</style>
-</head>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>计算机图形学-大作业</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			html, body {
+				width: 100%;
+				height: 100%;
+			}
 
-<body>
-	<ul>
-		<li class="main">
-			<a href="#">作业</a>
-			<ul>
-			<li><a href="waterfall.html">瀑布流</a></li>
-			<li><a href="silkway.html">丝绸之路</a></li>
-			</ul>
-		</li>
-		<li class="main">
-			<a href="#">菜单1</a>
-			<ul>
-			<li><a href="#">子菜单1</a></li>
-			<li><a href="#">子菜单2</a></li>
-			</ul></li>
-		<li class="main">
-			<a href="#">菜单1</a>
-			<ul>
-			<li><a href="#">子菜单1</a></li>
-			<li><a href="#">子菜单2</a></li>
-			</ul>
-		</li>
-	</ul>
-</body>
+			body {
+				background-color: #ffffff;
+				margin: 0;
+				overflow: hidden;
+				font-family: arial;
+			}
 
+			#blocker {
+
+				position: absolute;
+
+				width: 100%;
+				height: 100%;
+
+				background-color: rgba(0,0,0,0.5);
+
+			}
+
+			#instructions {
+
+				width: 100%;
+				height: 100%;
+
+				display: -webkit-box;
+				display: -moz-box;
+				display: box;
+
+				-webkit-box-orient: horizontal;
+				-moz-box-orient: horizontal;
+				/* box-orient: horizontal; */
+
+				-webkit-box-pack: center;
+				-moz-box-pack: center;
+				/* box-pack: center; */
+
+				-webkit-box-align: center;
+				-moz-box-align: center;
+				/* box-align: center; */
+
+				color: #ffffff;
+				text-align: center;
+
+				cursor: pointer;
+
+			}
+
+		</style>
+	</head>
+	<body>
+		<script src="three.js"></script>
+		<script src="PointerLockControls.js"></script>
+
+		<div id="blocker">
+
+			<div id="instructions">
+				<span style="font-size:40px">点击屏幕以开始</span>
+				<br />
+				(W, A, S, D = Move, SPACE = Jump, MOUSE = Look around)
+			</div>
+
+		</div>
+
+		<script>
+
+			var camera, scene, renderer, controls;
+
+			var objects = [];
+
+			var raycaster;
+
+			var blocker = document.getElementById( 'blocker' );
+			var instructions = document.getElementById( 'instructions' );
+
+			//API: http://www.html5rocks.com/en/tutorials/pointerlock/intro/
+
+			var havePointerLock = 'pointerLockElement' in document || 'mozPointerLockElement' in document || 'webkitPointerLockElement' in document;
+
+			//安装PointerLockControls插件
+			if ( havePointerLock ) {
+
+				var element = document.body;
+
+				var pointerlockchange = function ( event ) {
+
+					if ( document.pointerLockElement === element || document.mozPointerLockElement === element || document.webkitPointerLockElement === element ) {
+
+						controlsEnabled = true;
+						controls.enabled = true;
+
+						blocker.style.display = 'none';
+
+					} else {
+
+						controls.enabled = false;
+
+						blocker.style.display = 'block';
+
+						instructions.style.display = '';
+
+					}
+
+				};
+
+				var pointerlockerror = function ( event ) {
+
+					instructions.style.display = '';
+
+				};
+
+				// 绑定鼠标锁定事件控制状态
+				document.addEventListener( 'pointerlockchange', pointerlockchange, false );
+				document.addEventListener( 'mozpointerlockchange', pointerlockchange, false );
+				document.addEventListener( 'webkitpointerlockchange', pointerlockchange, false );
+
+				document.addEventListener( 'pointerlockerror', pointerlockerror, false );
+				document.addEventListener( 'mozpointerlockerror', pointerlockerror, false );
+				document.addEventListener( 'webkitpointerlockerror', pointerlockerror, false );
+				
+				//游戏开始控制
+				instructions.addEventListener( 'click', function ( event ) {
+
+					instructions.style.display = 'none';
+
+					// 请求浏览器将鼠标锁定在画面正中间
+					element.requestPointerLock = element.requestPointerLock || element.mozRequestPointerLock || element.webkitRequestPointerLock;
+					element.requestPointerLock();
+
+				}, false );
+
+			} else {
+
+				instructions.innerHTML = '你的浏览器似乎不支持PointerLockControls';
+
+			}
+			
+			//初始状态定义：一个人站在设定位置，不会自己向前走
+			//行为控制都是布尔运算
+			var controlsEnabled = false;
+
+			var moveForward = false;
+			var moveBackward = false;
+			var moveLeft = false;
+			var moveRight = false;
+			var canJump = false;
+
+			var prevTime = performance.now();
+			var velocity = new THREE.Vector3();
+			var direction = new THREE.Vector3();
+			var vertex = new THREE.Vector3();
+			var color = new THREE.Color();
+
+			init();
+			animate();
+			
+			//初始化
+			function init() {
+				//定义摄像机camera
+				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1000 );
+				
+				//定义场景scene
+				scene = new THREE.Scene();
+				scene.background = new THREE.Color( 0xcce0ff );
+				scene.fog = new THREE.Fog(0xcce0ff, 10,300 );
+				
+				//定义光照light
+				var light = new THREE.HemisphereLight( 0xeeeeff, 0x777788, 0.75 );
+				light.position.set( 0.5, 1, 0.75 );
+				scene.add( light );
+				
+				//绑定camera视角到controls对象
+				controls = new THREE.PointerLockControls( camera );
+				
+				//把controls对象加入到场景scene中
+				scene.add( controls.getObject() );
+				
+				//定义键盘控制WASDspace（按下）
+				var onKeyDown = function ( event ) {
+
+					switch ( event.keyCode ) {
+
+						case 38: // up
+						case 87: // w
+							moveForward = true;
+							break;
+
+						case 37: // left
+						case 65: // a
+							moveLeft = true; break;
+
+						case 40: // down
+						case 83: // s
+							moveBackward = true;
+							break;
+
+						case 39: // right
+						case 68: // d
+							moveRight = true;
+							break;
+
+						case 32: // space
+							if ( canJump === true ) velocity.y += 350;
+							canJump = false;
+							break;
+
+					}
+
+				};
+				
+				//定义键盘控制WASDspace（放开）
+				var onKeyUp = function ( event ) {
+
+					switch( event.keyCode ) {
+
+						case 38: // up
+						case 87: // w
+							moveForward = false;
+							break;
+
+						case 37: // left
+						case 65: // a
+							moveLeft = false;
+							break;
+
+						case 40: // down
+						case 83: // s
+							moveBackward = false;
+							break;
+
+						case 39: // right
+						case 68: // d
+							moveRight = false;
+							break;
+
+					}
+
+				};
+				
+				//把原有的方向键控制页面上下滚动功能消除
+				document.addEventListener( 'keydown', onKeyDown, false );
+				document.addEventListener( 'keyup', onKeyUp, false );
+				
+				//射线控制行走方向
+				raycaster = new THREE.Raycaster( new THREE.Vector3(), new THREE.Vector3( 0, - 1, 0 ), 0, 10 );
+
+				// 地面floor
+
+				var floorGeometry = new THREE.PlaneBufferGeometry( 2000, 2000, 100, 100 );
+				floorGeometry.rotateX( - Math.PI / 2 );
+
+				// 每个地板的位置定义
+
+				var position = floorGeometry.attributes.position;
+
+				for ( var i = 0; i < position.count; i ++ ) {
+
+					vertex.fromBufferAttribute( position, i );
+					
+					//随机生成每个地板顶点的位置XYZ
+					vertex.x += Math.random() * 20 - 10;
+					vertex.y += Math.random() * 2;
+					vertex.z += Math.random() * 20 - 10;
+
+					position.setXYZ( i, vertex.x, vertex.y, vertex.z );
+
+				}
+
+				floorGeometry = floorGeometry.toNonIndexed(); // 确定每个方块不会随机到同样的顶点
+
+				count = floorGeometry.attributes.position.count;
+				var colors = [];
+
+				//随机生成每个方块的颜色，通过HSL（色相，饱和度，明度）三个值按一定规律的随机数生成颜色
+				for ( var i = 0; i < count; i ++ ) {
+
+					color.setHSL( Math.random() * 0.1 + 0.3, 0.75, Math.random() * 0.15+ 0.65 );
+					colors.push( color.r, color.g, color.b );
+
+				}
+				
+				//地板的形状定义
+				floorGeometry.addAttribute( 'color', new THREE.Float32BufferAttribute( colors, 3 ) );
+				
+				var loader = new THREE.TextureLoader();
+				var floorTexture = loader.load( 'grasslight-big.jpg'  );//地板贴图
+				floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping;
+				floorTexture.repeat.set( 25, 25 );
+				floorTexture.anisotropy = 16;
+
+				var floorMaterial = new THREE.MeshLambertMaterial( { map: floorTexture } );
+
+				var floor = new THREE.Mesh( floorGeometry, floorMaterial );
+				scene.add( floor );
+
+				// 方块
+
+				var boxGeometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
+				boxGeometry = boxGeometry.toNonIndexed(); //确保每个方块的顶点都是独立的
+
+				count = boxGeometry.attributes.position.count;
+				colors = [];
+
+				for ( var i = 0; i < count; i ++ ) {
+
+					color.setHSL( Math.random() * 0.3 + 0.5, 0.75, Math.random() * 0.25 + 0.75 );
+					colors.push( color.r, color.g, color.b );
+
+				}
+
+				boxGeometry.addAttribute( 'color', new THREE.Float32BufferAttribute( colors, 3 ) );
+
+				for ( var i = 0; i < 500; i ++ ) {
+
+					var boxMaterial = new THREE.MeshLambertMaterial( { specular: 0xffffff, flatShading: true, vertexColors: THREE.VertexColors } );
+					boxMaterial.color.setHSL( Math.random() * 2.6 + 0.5, 3.5, Math.random() * 0.01 + 0.5 );
+
+					var box = new THREE.Mesh( boxGeometry, boxMaterial );
+					box.position.x = Math.floor( Math.random() * 20 - 10 ) * 20;
+					box.position.y = Math.floor( Math.random() * 20 ) * 20 + 10;
+					box.position.z = Math.floor( Math.random() * 20 - 10 ) * 20;
+
+					scene.add( box );
+					objects.push( box );
+
+				}
+
+				//渲染器实例化
+
+				renderer = new THREE.WebGLRenderer( { antialias: true } );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				document.body.appendChild( renderer.domElement );
+
+				//
+
+				window.addEventListener( 'resize', onWindowResize, false );
+
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+			
+			//定义了行动的速度和惯性
+			function animate() {
+
+				requestAnimationFrame( animate );
+
+				if ( controlsEnabled === true ) {
+
+					raycaster.ray.origin.copy( controls.getObject().position );
+					raycaster.ray.origin.y -= 20;
+
+					var intersections = raycaster.intersectObjects( objects );
+
+					var onObject = intersections.length > 0;
+
+					var time = performance.now();
+					var delta = ( time - prevTime ) / 1000;
+
+					velocity.x -= velocity.x * 10.0 * delta;
+					velocity.z -= velocity.z * 10.0 * delta;
+
+					velocity.y -= 9.8 * 100.0 * delta; // 100.0 = mass
+
+					direction.z = Number( moveForward ) - Number( moveBackward );
+					direction.x = Number( moveLeft ) - Number( moveRight );
+					direction.normalize(); // 确保每个方向移动的样子都是一样的
+
+					if ( moveForward || moveBackward ) velocity.z -= direction.z * 400.0 * delta;
+					if ( moveLeft || moveRight ) velocity.x -= direction.x * 400.0 * delta;
+
+					if ( onObject === true ) {
+
+						velocity.y = Math.max( 0, velocity.y );
+						canJump = true;
+
+					}
+
+					controls.getObject().translateX( velocity.x * delta );
+					controls.getObject().translateY( velocity.y * delta );
+					controls.getObject().translateZ( velocity.z * delta );
+
+					if ( controls.getObject().position.y < 10 ) {
+
+						velocity.y = 0;
+						controls.getObject().position.y = 10;
+
+						canJump = true;
+
+					}
+
+					prevTime = time;
+
+				}
+
+				renderer.render( scene, camera );
+
+			}
+
+		</script>
+	</body>
 </html>
