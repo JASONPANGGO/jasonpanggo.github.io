@@ -12,7 +12,7 @@ ul {
 .main {
 	float: left;
 	background-color: #FF9800;
-	width: 100px;
+	width:10%;
 }
 
 li{
@@ -30,6 +30,7 @@ a {
 
 .main a {
 	color: rgba(0,0,0,0.9);
+	text-align: center;
 }
 
 .main li a {
