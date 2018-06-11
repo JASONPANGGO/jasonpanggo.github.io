@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/button.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/deheilan.css">
+    <link rel="icon" type="image/x-icon" href="../camel.ico"/> 
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-router.min.js"></script>
+    <title>德黑兰</title>
+</head>
+<body>
+        <div class="navigation">
+                <a class="logo" href="../index.html">
+                </a>
+                <a class="home" href="../index.html">首页</a>
+                <a class="destination" href="../index.html#map">目的地</a>
+                <a class="history" href="history.html">历史</a>
+                <a class="story" href="diangu.html">典故</a>
+                <a class="shop" href="shop.html">丝绸商城</a>
+                <a class="weibo" href="#"></a>
+                <a class="qq" href="#"></a>
+                <a class="wechat" href="#"></a>
+                <a class="login" href="login.html">登录</a>
+                <a class="signup" href="signup.html">注册</a>
+            </div>
+<div class="head">
+    <div class="eyebrow"></div>
+    <div class="card animated fadeIn">
+        <div class="country">
+        伊朗
+        </div>
+        <div class="card-title">
+        德黑兰
+        </div>
+        <div class="thename">
+        Tehran
+        </div>
+        <div class="card-body">
+            德黑兰（波斯语：تهران‎、Tehrān）是伊朗的首都，同时也是德黑兰省省会，总人口达8,429,807人，它是伊朗最大的城市，并且是西亚地区最大的城市之一。德黑兰有许多历史上著名的清真寺、基督教堂、犹太会堂及琐罗亚斯德教的火庙。
+        </div>
+    </div>
+</div>
+
+    <div class="leftside">
+        <div class="travellers">
+            <div class="title">
+                旅行家专栏
+            </div>
+            <a href="#">
+            <div class="travellers-img">
+                <img src="../img/traveller/5.jpg">
+            </div>
+            </a>
+            <div class="travellers-text">
+                <a href="#">
+                <div class="little-title">
+                    趣游波斯国
+                </div>
+                </a>
+                <div class="content">
+                    伊朗的旅行，就如同藏红花冰淇淋般，回味无穷。
+                </div>
+            </div>
+        </div>
+        <div class="guide">
+            <div class="title">旅行攻略</div>
+            <div class="guide-item">
+                <a href="#">
+                    <div class="travellers-img">
+                        <img src="../img/deheilan/guide/1.jpg">
+                    </div>
+                </a>
+                 <div class="travellers-text">
+                    <a href="#">
+                    <div class="little-title">
+                        人文伊朗见闻录之五味杂陈
+                    </div>
+                    </a>
+                    <div class="content">
+                        恐怕这是我们最为坎坷的一次旅行...
+                    </div>
+                </div>
+            </div>
+            <div class="guide-item">
+                    <a href="#">
+                        <div class="travellers-img">
+                            <img src="../img/deheilan/guide/2.jpg">
+                        </div>
+                    </a>
+                     <div class="travellers-text">
+                        <a href="#">
+                        <div class="little-title">
+                            盛夏的波斯,热情如火!
+                        </div>
+                        </a>
+                        <div class="content">
+                            知道我要去伊朗，有些朋友不能理解，大概是觉得它是个和阿富汗一样破落危险的地方。这实在是个误会...
+                        </div>
+                    </div>
+                </div>
+                <div class="guide-item">
+                        <a href="#">
+                            <div class="travellers-img">
+                                <img src="../img/deheilan/guide/3.jpg">
+                            </div>
+                        </a>
+                         <div class="travellers-text">
+                            <a href="#">
+                            <div class="little-title">
+                                波斯波利斯的一次别离
+                            </div>
+                            </a>
+                            <div class="content">
+                                阿契美尼德王朝的残骸零落了一地，雨后的夕阳，温和可亲，就象曾经辉煌又衰落的波斯帝国。别离后我又重回可以容纳万人的阿帕达纳觐见大厅，废墟之上，夕阳正穿过万国门，传说中的神鹰身上，光芒万丈...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                            <a href="#">
+                                <div class="travellers-img">
+                                    <img src="../img/deheilan/guide/4.jpg">
+                                </div>
+                            </a>
+                             <div class="travellers-text">
+                                <a href="#">
+                                <div class="little-title">
+                                    波斯千年，七日伊朗
+                                </div>
+                                </a>
+                                <div class="content">
+                                    前排大姐裹起黑色的头巾，机上餐盒多了清真的标记，机上广播不时的波斯语，一切仿佛都在告诉我，那个梦中的多彩世界终于愈发接近了...
+                                </div>
+                            </div>
+                        </div>
+        </div>
+    </div>
+    
+    <div class="rightside">
+        <div class="title">
+        当地特色
+        </div> 
+        <br>
+        <div class="router-container">
+        <router-link to="/food">
+        <div class="food">
+        美食
+        </div>
+        </router-link>
+
+        <router-link to="/traffic">
+        <div class="hotel">
+        酒店
+        </div>
+        </router-link>
+
+        <router-link to="/view">
+        <div class="view">
+        景点
+        </div>
+        </router-link>
+        </div>
+
+        <div class="details-container">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <router-view></router-view>
+        <a href="ystbe.html">
+            <div class="next">
+                <img src="../img/camel.png" width="60px" alt="">
+                    下一站...
+            </div>
+            </a>
+        </div>
+    </div>
+</body>
+    <script type="text/template" id="tp1">
+        <div class="details-container">
+            <div class="bottom-bar">
+                <div class="bar1"></div>
+            </div>
+            <div class="item-list">
+                <div class="item"><a href="#">
+                    <div class="item-img"><img src="../img/deheilan/food/1.png"></div>
+                    </a>
+                    <div class="item-details">
+                    <a href="#">
+                    <div class="item-title">炖鸡肉/Khoresh Fesenjaan</div>
+                    </a>
+                    <div class="item-details-text">
+                    <br></br>这道菜的主材是鸡肉，大量的核桃和石榴汁。做法是将核桃炒香，磨碎（但不要太碎，要有颗粒感）...</div>
+                    </div>
+                </div>
+            <div class="item"><a href="#">
+                <div class="item-img"><img src="../img/deheilan/food/2.png"></div>
+                </a>
+                <div class="item-details">
+                <a href="#">
+                <div class="item-title">茄子炖牛羊肉/Khoresh Baadenjaan</div>
+                </a>
+                <div class="item-details-text">
+                <br></br>这道菜里有羊肉或牛肉、小茄子、洋葱、番茄酱、柠檬汁。做法是用油炒熟切成块的牛羊肉，加入盐、胡椒、番茄酱与柠檬汁熬煮...</div>
+                </div>
+            </div>
+            <div class="item"><a href="#">
+                <div class="item-img"><img src="../img/deheilan/food/3.png"></div>
+                </a>
+                <div class="item-details">
+                <a href="#">
+                <div class="item-title">葡萄叶夹牛羊肉馅/Dolmeh Barg-e Mow</div>
+                </a>
+                <div class="item-details-text">
+                    <br></br>这道菜用到了Dolmeh的经典搭配：新鲜葡萄叶、牛肉或羊肉馅、长粒大米、洋葱、柠檬汁以及欧芹、莳萝、龙蒿、薄荷等香料...
+                </div>
+                </div>
+            </div>
+            <div class="item"><a href="#">
+                    <div class="item-img"><img src="../img/samaerhan/food/5.jpg"></div>
+                    </a>
+                    <div class="item-details">
+                    <a href="#">
+                    <div class="item-title">馕</div>
+                    </a>
+                    <div class="item-details-text">
+                    <br></br>作为一项餐桌礼仪，当把一个馕端上来时，先把它掰成若干小块，供就坐的人分享，可以沾点汤或沙拉里的汁...
+                        </div>
+                    </div>
+            </div>  
+            <div class="item"><a href="#">
+                <div class="item-img"><img src="../img/deheilan/food/4.png"></div>
+                </a>
+                <div class="item-details">
+                <a href="#">
+                <div class="item-title">大米肉馅酿茄子/Dolmeh Baadenjaan</div>
+                </a>
+                <div class="item-details-text">
+                <br></br>这道菜摒弃了植物叶子，改用茄子当容器，做法有点像中国的酿茄子。先把肉馅和洋葱炒熟，与煮熟的长粒大米混合...
+                </div>
+                </div>
+                </div>
+            <div class="item"><a href="#">
+            <div class="item-img"><img src="../img/samaerhan/food/6.png"></div>
+            </a>
+            <div class="item-details">
+            <a href="#">
+            <div class="item-title">蜂蜜</div>
+            </a>
+            <div class="item-details-text">
+            <br></br>出售各种蜂蜜的摊档...
+            </div>
+            </div>
+            </div>
+            <div class="item"><a href="#">
+                <div class="item-img"><img src="../img/samaerhan/food/6.jpg"></div>
+                 </a>
+                <div class="item-details">
+                <a href="#">
+                <div class="item-title">水果</div>
+                </a>
+                <div class="item-details-text">
+                    <br></br>西瓜、哈密瓜、葡萄和提子，虽然以往在新疆品尝过、平时也能吃到，但是还是感觉这里的特甜...
+                </div>
+                </div>
+                </div>
+        </div>
+            </div>
+    </script>
+
+    <script type="text/template" id="tp2">
+        <div class="details-container">
+        <div class="bottom-bar">
+            <div class="bar2"></div>
+        </div>
+        <div class="item-list">
+            <div class="item"><a href="#">
+                <div class="item-img"><img src="../img/deheilan/hotel/1.png"></div>
+                </a>
+                <div class="item-details">
+                <a href="#">
+                <div class="item-title">Morshedi House</div>
+                </a>
+                <div class="item-details-text">
+                <br></br>Boostani Alley, Molla Habibolah Street | Kamalolmolk Sqare, Kashan 87134, Iran...</div>
+                </div>
+            </div>
+            <div class="item"><a href="#">
+                <div class="item-img"><img src="../img/deheilan/hotel/2.png"></div>
+                </a>
+                <div class="item-details">
+                <a href="#">
+                <div class="item-title">Viana Hotel</div>
+                </a>
+                <div class="item-details-text">
+                <br></br>Kashani Street | in front of Mirdamad Street, Esfahan 8183865571, Iran...</div>
+                </div>
+            </div>
+            <div class="item"><a href="#">
+                <div class="item-img"><img src="../img/deheilan/hotel/3.png"></div>
+                </a>
+                <div class="item-details">
+                <a href="#">
+                <div class="item-title">Hasht Behesht Apart. Hotel</div>
+                </a>
+                <div class="item-details-text">
+                <br></br>Alley No. 8 Ostandari St., Esfahan 8145657333, Iran..</div>
+                </div>
+            </div>
+            <div class="item"><a href="#">
+                <div class="item-img"><img src="../img/deheilan/hotel/4.png"></div>
+                </a>
+                <div class="item-details">
+                <a href="#">
+                <div class="item-title">Zandiyeh Hotel</div>
+                </a>
+                <div class="item-details-text">
+                <br></br>Hejrat Street, Shiraz 71364, Iran...</div>
+                </div>
+            </div>
+            <div class="item"><a href="#">
+                <div class="item-img"><img src="../img/deheilan/hotel/5.png"></div>
+                </a>
+                <div class="item-details">
+                <a href="#">
+                <div class="item-title">Espinas Palace Hotel</div>
+                </a>
+                <div class="item-details-text">
+                <br></br>Behroud Sq, Saadat abad | Behroud Sq, Abedi St., Espinas Hotel Road, Tehran 11369, Iran...</div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="tp3">
+        <div class="details-container">
+        <div class="bottom-bar">
+            <div class="bar3"></div>
+        </div>
+        <div class="item-list">
+                <div class="item"><a href="#">
+                    <div class="item-img"><img src="../img/deheilan/view/1.jpg"></div>
+                    </a>
+                    <div class="item-details">
+                    <a href="#">
+                    <div class="item-title">The National Jewelry Treasury
+                        伊朗国家珍宝馆</div>
+                    </a>
+                    <div class="item-details-text">
+                    <br></br>斯语发音为Moze-ye Javaherate Meli，位于伊朗中央银行的地下室，收藏了伊斯兰革命以前时期(主要是萨法维王朝、恺加王朝和巴列维王朝)的大量皇家珍宝...</div>
+                    </div>
+                </div>
+                <div class="item"><a href="#">
+                    <div class="item-img"><img src="../img/deheilan/view/2.jpg"></div>
+                    </a>
+                    <div class="item-details">
+                    <a href="#">
+                    <div class="item-title">Tower of Freedom 自由塔</div>
+                    </a>
+                    <div class="item-details-text">
+                        <br></br>又名Azadi Tower，波斯语发音为Borj-e Azadi，德黑兰的地标性建筑！估计在描述伊朗的图文中，你最常看到的就是这幅画面...</div>
+                    </div>
+                </div>
+                <div class="item"><a href="#">
+                    <div class="item-img"><img src="../img/deheilan/view/3.jpg"></div>
+                    </a>
+                    <div class="item-details">
+                    <a href="#">
+                    <div class="item-title">原美国驻德黑兰大使馆</div>
+                    </a>
+                    <div class="item-details-text">
+                        <br></br>波斯语发音为Sefarat-e America，这是伊朗最独特、必须参观的著名景点，包括一座大院和其中一栋两层小楼...
+                    </div>
+                </div>
+                </div>
+                <div class="item"><a href="#">
+                    <div class="item-img"><img src="../img/deheilan/view/4.jpg"></div>
+                    </a>
+                    <div class="item-details">
+                    <a href="#">
+                    <div class="item-title">Golestan Palace 古勒斯坦宫</div>
+                    </a>
+                    <div class="item-details-text">
+                        <br></br>斯语发音为Kakh-e Golestan，新近被列为世界文化遗产，部分建筑始建于萨法维王朝时期，后在恺加王朝成为王宫...
+                    </div>
+                </div>
+                </div>
+                <div class="item"><a href="#">
+                    <div class="item-img"><img src="../img/deheilan/view/5.jpg"></div>
+                    </a>
+                    <div class="item-details">
+                    <a href="#">
+                    <div class="item-title">Sa'd Abad Museum 萨德阿巴德宫</div>
+                    </a>
+                    <div class="item-details-text">
+                        <br></br>于德黑兰城北山脚的萨德阿巴德宫波斯语发音为Kakh-e Saad Abad，是巴列维国王的皇家夏宫，占地超过100公顷...
+                    </div>
+                </div>
+                </div>
+                <div class="item"><a href="#">
+                    <div class="item-img"><img src="../img/deheilan/view/6.jpg"></div>
+                    </a>
+                    <div class="item-details">
+                    <a href="#">
+                    <div class="item-title">Tehran Grand Bazaar 德黑兰大巴扎</div>
+                    </a>
+                    <div class="item-details-text">
+                        <br></br>波斯语发音为Bazar-e Bozorge Tehran，是中东地区最大、历史最悠久的巴扎之一。里面终日熙熙攘攘...
+                    </div>
+                </div>
+                </div>
+                <div class="item"><a href="#">
+                    <div class="item-img"><img src="../img/deheilan/view/7.jpg"></div>
+                    </a>
+                    <div class="item-details">
+                    <a href="#">
+                    <div class="item-title">National Museum of Iran 伊朗国家博物馆</div>
+                    </a>
+                    <div class="item-details-text">
+                        <br></br>伊朗国家博物馆又名Iran Bastan Museum，波斯语发音为Moze-ye Meli。伊朗国家博物馆是世界上最重要的博物馆之一...
+                    </div>
+                </div>
+                </div>
+        </div>
+    </script>
+<script type=""></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/xianapp.js"></script>
+</html>

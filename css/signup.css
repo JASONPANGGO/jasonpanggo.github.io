@@ -1,0 +1,53 @@
+.destination {
+	background-color: #efefef;
+	color: black;
+	font-weight: normal;
+}
+
+.destination:hover {
+	color:orange;
+}
+
+.navigation {
+	background-color: #efefef;
+    border-bottom-style: solid;
+    border-bottom-color: #e5e5e5;
+}
+
+.container {
+    margin-top: 50px;
+    width: 400px;
+}
+
+.input {
+    width: 385px;
+}
+
+.input2 {
+	width: 280px;
+}
+
+.btn1 {
+	margin-top: -10px;
+	margin-left: 5px;
+}
+
+.forget {
+    margin-top: 10px;
+}
+
+.container a{
+    color: grey;
+}
+
+.container a:hover {
+    color: orange;
+}
+
+.password {
+    margin-top: 0px;
+}
+
+.terms {
+    margin-top: 10px;
+}

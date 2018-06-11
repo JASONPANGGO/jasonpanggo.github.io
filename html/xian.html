@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/button.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/xianstyle.css">
+    <link rel="icon" type="image/x-icon" href="../camel.ico"/> 
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-router.min.js"></script>
+    <title>西安</title>
+</head>
+<body>
+        <div class="navigation">
+                <a class="logo" href="../index.html">
+                </a>
+                <a class="home" href="../index.html">首页</a>
+                <a class="destination" href="../index.html#map">目的地</a>
+                <a class="history" href="history.html">历史</a>
+                <a class="story" href="diangu.html">典故</a>
+                <a class="shop" href="shop.html">丝绸商城</a>
+                <a class="weibo" href="#"></a>
+                <a class="qq" href="#"></a>
+                <a class="wechat" href="#"></a>
+                <a class="login" href="login.html">登录</a>
+                <a class="signup" href="signup.html">注册</a>
+            </div>
+<div class="head">
+    <div class="eyebrow"></div>
+    <div class="card animated fadeIn">
+        <div class="country">
+            中国
+        </div>
+        <div class="card-title">
+            西安
+        </div>
+        <div class="thename">
+            Xi An
+        </div>
+        <div class="card-body">
+            西安，古称长安、镐京，是陕西省会、副省级市、关中平原城市群核心城市、丝绸之路起点城市、"一带一路"核心区、中国西部地区重要的中心城市，国家重要的科研、教育、工业基地。西安是中国四大古都之一 ，联合国科教文组织于1981年确定的“世界历史名城”美媒评选的世界十大古都之一。
+        </div>
+    </div>
+</div>
+
+    <div class="leftside">
+        <div class="travellers">
+            <div class="title">
+                旅行家专栏
+            </div>
+            <a href="details/traveller1.html">
+            <div class="travellers-img">
+                <img src="../img/traveller/1.jpeg">
+            </div>
+            </a>
+            <div class="travellers-text">
+                <a href="details/traveller1.html">
+                <div class="little-title">
+                    长安，繁华落尽；西安，人间烟火。
+                </div>
+                </a>
+                <div class="content">
+                    西安，吃货的天堂。一路归来，除了想读读繁盛秦唐之外，更让我难忘的是那一条条夜市的烟火气。
+                </div>
+            </div>
+        </div>
+        <div class="guide">
+            <div class="title">旅行攻略</div>
+            <div class="guide-item">
+                <a href="#">
+                    <div class="travellers-img">
+                        <img src="../img/xian/guide/1.jpg">
+                    </div>
+                </a>
+                 <div class="travellers-text">
+                    <a href="#">
+                    <div class="little-title">
+                        西安六大必游景点
+                    </div>
+                    </a>
+                    <div class="content">
+                        以下几个景点是西安最具人气的，适合初次到访的游客，包含历史古迹、美食街区、城市地标...
+                    </div>
+                </div>
+            </div>
+            <div class="guide-item">
+                    <a href="#">
+                        <div class="travellers-img">
+                            <img src="../img/xian/guide/2.jpg">
+                        </div>
+                    </a>
+                     <div class="travellers-text">
+                        <a href="#">
+                        <div class="little-title">
+                            来西安，当然要住青旅！
+                        </div>
+                        </a>
+                        <div class="content">
+                                西安，最适合住青旅的城市。在这座历史悠久的古都，结识五湖四海的朋友、畅谈古今、对酒当歌...
+                        </div>
+                    </div>
+                </div>
+                <div class="guide-item">
+                        <a href="#">
+                            <div class="travellers-img">
+                                <img src="../img/xian/guide/3.jpg">
+                            </div>
+                        </a>
+                         <div class="travellers-text">
+                            <a href="#">
+                            <div class="little-title">
+                                西安—成都高铁开通！263元从成都吃到西安！
+                            </div>
+                            </a>
+                            <div class="content">
+                                    这条创下多个“第一”的高铁今天开通！“逼停”直飞多年的航班...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                            <a href="#">
+                                <div class="travellers-img">
+                                    <img src="../img/xian/guide/4.jpg">
+                                </div>
+                            </a>
+                             <div class="travellers-text">
+                                <a href="#">
+                                <div class="little-title">
+                                    亲测推荐 | 地道的西安美食汇总
+                                </div>
+                                </a>
+                                <div class="content">
+                                        说起西安有什么好吃的，我想即使你没去过西安，多多少少也能说出个三五种来。没错，西安的美食确实就是如此出名。今天让我来安利一发...
+                                </div>
+                            </div>
+                        </div>
+        </div>
+    </div>
+    
+    <div class="rightside">
+        <div class="title">
+        当地特色
+        </div> 
+        <br>
+        <div class="router-container">
+        <router-link to="/food">
+        <div class="food">
+        美食
+        </div>
+        </router-link>
+
+        <router-link to="/traffic">
+        <div class="hotel">
+        酒店
+        </div>
+        </router-link>
+
+        <router-link to="/view">
+        <div class="view">
+        景点
+        </div>
+        </router-link>
+        </div>
+
+        <div class="details-container">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <router-view></router-view>
+        <a href="lanzhou.html">
+        <div class="next">
+            <img src="../img/camel.png" width="60px" alt="">
+                下一站...
+        </div>
+        </a>
+        </div>
+    </div>
+</body>
+    <script type="text/template" id="tp1">
+        <div class="details-container">
+            <div class="bottom-bar">
+                <div class="bar1"></div>
+            </div>
+            <div class="item-list">
+                <div class="item"><a href="details/biangbiang.html">
+                    <div class="item-img"><img src="../img/xian/food/1.jpg"></div>
+                    </a>
+                    <div class="item-details">
+                    <a href="details/biangbiang.html">
+                    <div class="item-title">biangbiang面</div>
+                    </a>
+                    <div class="item-details-text">
+                    <br></br>biang biang面的产地特性，食者感受、制作工艺要领，原料、调料、做面人辛勤操作，秦人性格气质，心底宽长，有棱有角，大苦大乐的爽快精神，引出陕西人为之自豪的饮食文化...</div>
+                    </div>
+                </div>
+            <div class="item"><a href="#">
+                <div class="item-img"><img src="../img/xian/food/2.jpg"></div>
+                </a>
+                <div class="item-details">
+                <a href="#">
+                <div class="item-title">贾三灌汤包子</div>
+                </a>
+                <div class="item-details-text">
+                <br></br>贾三灌汤包子是陕西西安的一种地方特产，是名头最大、字号最为响亮的西安小吃之一。找到贾三灌汤包子，你就算是找到了真正的西安小吃...</div>
+                </div>
+            </div>
+            <div class="item"><a href="#">
+                <div class="item-img"><img src="../img/xian/food/3.jpg"></div>
+                </a>
+                <div class="item-details">
+                <a href="#">
+                <div class="item-title">凉皮</div>
+                </a>
+                <div class="item-details-text">
+                    <br></br>凉皮是西安当地的名吃，凉皮的做法也多样，其中尤以秦镇凉皮作为有名，至今已有2000余年历史，调好的凉皮全呈红色，辣里透香，味道爽口，顺滑Q弹，备受食客喜爱，西安市内也有多家人气极旺的凉皮店。在西安深受欢迎...
+                </div>
+                </div>
+            </div>
+            <div class="item"><a href="#">
+                    <div class="item-img"><img src="../img/xian/food/4.jpg"></div>
+                    </a>
+                    <div class="item-details">
+                    <a href="#">
+                    <div class="item-title">肉夹馍</div>
+                    </a>
+                    <div class="item-details-text">
+                    <br></br>肉夹馍是陕西（乃至西北大部分地区）著名小吃，起源于战国，当时称“寒肉”。 在西安，老樊家几乎成了腊汁肉的代名词。 腊汁肉是一种用着锅占制的酱肉，但比一般酱肉酥烂，滋味鲜长...
+                        </div>
+                        </div>
+            </div>  
+            <div class="item"><a href="#">
+                <div class="item-img"><img src="../img/xian/food/5.jpg"></div>
+                </a>
+                <div class="item-details">
+                <a href="#">
+                <div class="item-title">臊子面</div>
+                </a>
+                <div class="item-details-text">
+                <br></br>臊（sào）子面是中国西北地区特色传统面食、著名西府小吃，以宝鸡的岐山臊子面最为正宗。
+                臊子面历史悠久。其中含有配菜比如豆腐，鸡蛋等，做法简单。臊子就是肉丁的意思...
+                </div>
+                </div>
+                </div>
+            <div class="item"><a href="#">
+            <div class="item-img"><img src="../img/xian/food/6.jpg"></div>
+            </a>
+            <div class="item-details">
+            <a href="#">
+            <div class="item-title">羊肉泡馍</div>
+            </a>
+            <div class="item-details-text">
+            <br></br>在西安，一碗热气腾腾的羊肉泡馍，绝不仅仅是一种饭食，而是一种沉淀在西安人骨子里的文化。“三千万秦人齐吼秦腔，一碗羊肉泡喜气洋洋”，这是对西安人豪迈性格的生动写照，也充分表明了西安人对 “天下第一碗”——羊肉泡馍的依赖...
+            </div>
+            </div>
+            </div>
+            <div class="item"><a href="#">
+                <div class="item-img"><img src="../img/xian/food/7.jpg"></div>
+                 </a>
+                <div class="item-details">
+                <a href="#">
+                <div class="item-title">甑糕</div>
+                </a>
+                <div class="item-details-text">
+                    <br></br>甑糕小吃历史悠久。甑，是中国古代一种非常古老的蒸器，有陶制、铜制、木制、铁制等，后经民间传承，将铁甑保留至今，而用之蒸制的粘糕也别有风味。甑糕小吃历史悠久...
+                </div>
+                </div>
+                </div>
+        </div>
+            </div>
+    </script>
+
+    <script type="text/template" id="tp2">
+        <div class="details-container">
+        <div class="bottom-bar">
+            <div class="bar2"></div>
+        </div>
+        <div class="item-list">
+            <div class="item"><a href="#">
+                <div class="item-img"><img src="../img/xian/hotel/1.jpg"></div>
+                </a>
+                <div class="item-details">
+                <a href="#">
+                <div class="item-title">西安馨乐庭兴庆宫服务公寓</div>
+                </a>
+                <div class="item-details-text">
+                <br></br>酒店位置相当不错，去市区逛或者出城什么的，交通很方便，并且楼下就有超市，自驾补充物资也很方便，房间很挺干净的...</div>
+                </div>
+            </div>
+            <div class="item"><a href="#">
+                <div class="item-img"><img src="../img/xian/hotel/2.jpg"></div>
+                </a>
+                <div class="item-details">
+                <a href="#">
+                <div class="item-title">西安成功国际酒店（原成功酒店）</div>
+                </a>
+                <div class="item-details-text">
+                <br></br>成功宜必思装修风格很简约，很符合低炭生活的标准，价格便宜、交通方便。三星标准四星服务，酒店可以免费上网。...</div>
+                </div>
+            </div>
+            <div class="item"><a href="#">
+                <div class="item-img"><img src="../img/xian/hotel/3.jpg"></div>
+                </a>
+                <div class="item-details">
+                <a href="#">
+                <div class="item-title">
+                    瓦舍旅行酒店（西安钟楼南门店）</div>
+                </a>
+                <div class="item-details-text">
+                <br></br>西安阅城瓦舍旅行酒店坐落于西安古城墙朱雀门脚下，与城墙仅人行道之隔，位于市中心钟鼓楼，近2号线永宁门站，交通非..</div>
+                </div>
+            </div>
+            <div class="item"><a href="#">
+                <div class="item-img"><img src="../img/xian/hotel/4.jpg"></div>
+                </a>
+                <div class="item-details">
+                <a href="#">
+                <div class="item-title">西安湘子门青年旅舍</div>
+                </a>
+                <div class="item-details-text">
+                <br></br>古色古香的四合院，有双人间大炕房，极具特色。属于市中心，交通很方便。另外网上订价格会更便宜。...</div>
+                </div>
+            </div>
+            <div class="item"><a href="#">
+                <div class="item-img"><img src="../img/xian/hotel/5.jpg"></div>
+                </a>
+                <div class="item-details">
+                <a href="#">
+                <div class="item-title">西安馨乐庭城中服务公寓</div>
+                </a>
+                <div class="item-details-text">
+                <br></br>安静又干净的酒店，地理位置非常棒，转弯就是机场大巴终点站，出门就是鼓楼和回民街，员工服务也很贴心。...</div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="tp3">
+        <div class="details-container">
+        <div class="bottom-bar">
+            <div class="bar3"></div>
+        </div>
+        <div class="item-list">
+                <div class="item"><a href="#">
+                    <div class="item-img"><img src="../img/xian/view/1.jpeg"></div>
+                    </a>
+                    <div class="item-details">
+                    <a href="#">
+                    <div class="item-title">大雁塔广场</div>
+                    </a>
+                    <div class="item-details-text">
+                    <br></br>市区内最著名的广场，每晚都有亚洲最大音乐喷泉表演，是游人及市民们休闲散步的好去处。
+                    ·整个广场以大雁塔为中心轴，中央为主景水道，左右两侧分及广场南端设置多处景观。 
+                    ...</div>
+                    </div>
+                </div>
+                <div class="item"><a href="#">
+                    <div class="item-img"><img src="../img/xian/view/2.jpeg"></div>
+                    </a>
+                    <div class="item-details">
+                    <a href="#">
+                    <div class="item-title">鼓楼</div>
+                    </a>
+                    <div class="item-details-text">
+                        <br></br>建于1380年，和钟楼相距仅200米，互相对应。中国古代遗留下来众多鼓楼中形制最大、保存最完整鼓楼之一，是西安的标志性建筑。全楼构造无一铁钉，在唐朝风格建筑基础上，运用宋代建筑手法并加以创新，使得整体壮观恢弘，颇具民族色彩...</div>
+                    </div>
+                </div>
+                <div class="item"><a href="#">
+                    <div class="item-img"><img src="../img/xian/view/3.png"></div>
+                    </a>
+                    <div class="item-details">
+                    <a href="#">
+                    <div class="item-title">华清宫</div>
+                    </a>
+                    <div class="item-details-text">
+                        <br></br>华清宫自古以来就是皇家游览沐浴的胜地，据说曾经是是杨贵妃沐浴的地方。相传西周的周幽王就曾在这里建离官。这里遗留有比较完整的周、秦、汉、唐、明、清等历代文化遗址、园林景观、古建筑及古树名木等文物资源...
+                    </div>
+                </div>
+                </div>
+                <div class="item"><a href="#">
+                    <div class="item-img"><img src="../img/xian/view/4.jpg"></div>
+                    </a>
+                    <div class="item-details">
+                    <a href="#">
+                    <div class="item-title">秦兵马俑博物馆</div>
+                    </a>
+                    <div class="item-details-text">
+                        <br></br>是秦始皇陵园中一处大型从葬坑，以兵马俑为基础，在原址上建立的中国最大的古代军事博物馆...
+                    </div>
+                </div>
+                </div>
+                <div class="item"><a href="#">
+                    <div class="item-img"><img src="../img/xian/view/5.jpg"></div>
+                    </a>
+                    <div class="item-details">
+                    <a href="#">
+                    <div class="item-title">陕西历史博物馆</div>
+                    </a>
+                    <div class="item-details-text">
+                        <br></br>位于西安大雁塔的西北侧，是中国第一座大型现代化国家级博物馆，它的建成标志着中国博物馆事业迈入了新的发展里程。馆藏文物多达37 万余件，从远古人类的简单石器，到1840 年前社会生活中的各类器物，时间跨度长达一百多万年...
+                    </div>
+                </div>
+                </div>
+                <div class="item"><a href="#">
+                    <div class="item-img"><img src="../img/xian/view/6.jpg"></div>
+                    </a>
+                    <div class="item-details">
+                    <a href="#">
+                    <div class="item-title">西安城墙</div>
+                    </a>
+                    <div class="item-details-text">
+                        <br></br>又称西安明城墙，全长13.7千米，是中国现存规模最大，保存最完整的古代城垣，与平遥城墙、荆州城墙、兴城城墙等并列为中国现存最完好的四座古城墙。...
+                    </div>
+                </div>
+                </div>
+                <div class="item"><a href="#">
+                    <div class="item-img"><img src="../img/xian/view/7.jpg"></div>
+                    </a>
+                    <div class="item-details">
+                    <a href="#">
+                    <div class="item-title">大唐芙蓉园</div>
+                    </a>
+                    <div class="item-details-text">
+                        <br></br>西北地区最大的文化主题园，展示了盛唐风貌，晚上华灯齐放，还有全球最大水幕电影...
+                    </div>
+                </div>
+                </div>
+        </div>
+    </script>
+<script type=""></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/xianapp.js"></script>
+</html>

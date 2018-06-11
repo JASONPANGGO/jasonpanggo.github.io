@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>丝绸商城</title>
+    <link rel="stylesheet" href="../css/animate.css">
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../css/button.css" rel="stylesheet" type="text/css">
+    <link href="../css/fontawesome-all.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/shopsyle.css">
+    <link rel="icon" type="image/x-icon" href="../camel.ico"/> 
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-router.min.js"></script>
+</head>
+<body>
+    	<div class="navigation">
+                <a class="logo" href="../index.html">
+                </a>
+                <a class="home" href="../index.html">首页</a>
+                <a class="destination" href="../index.html#map">目的地</a>
+                <a class="history" href="history.html">历史</a>
+                <a class="story" href="diangu.html">典故</a>
+                <a class="shop" href="shop.html">丝绸商城</a>
+                <a class="weibo" href="#"></a>
+                <a class="qq" href="#"></a>
+                <a class="wechat" href="#"></a>
+                <a class="login" href="login.html">登录</a>
+                <a class="signup" href="signup.html">注册</a>
+            </div>
+    <div class="head">
+        <div class="eyebrow"></div>
+        
+    </div>
+    <div class="container">
+        <div class="leftside">
+
+            <router-link to="/xian">
+                <div class="xianlogo visited"><img src="../img/xian.png" alt=""></div>
+            </router-link>
+            
+            <router-link to="/lanzhou">
+                <div class="lanzhoulogo"><img src="../img/lanzhou.png" alt=""></div>
+            </router-link>
+
+            <router-link to="/wulumuqi">            
+                <div class="wulumuqilogo"><img src="../img/wulumuqi.png" alt=""></div>
+            </router-link>
+            
+            <router-link to="/samaerhan">    
+                <div class="samaerhanlogo"><img src="../img/samaerhan.png" alt=""></div>
+            </router-link>
+            
+            <router-link to="/deheilan">   
+                <div class="deheilanlogo"><img src="../img/deheilan.png" alt=""></div>
+            </router-link>
+
+        </div>
+        
+        <div class="rightside">
+            <router-view></router-view>
+        </div>
+    </div>
+</body>
+
+<script type="text/template" id="tp1">
+    <div>
+    <div class="goodsdetail">
+        <div class="item-img">
+            <img src="../img/shop/xian/1.jpg">
+        </div>
+        <div class="item-text">
+            <a href="">
+            <div class="item-title">仿唐三彩瓷器</div>
+            <div class="item-content">                
+                简介：西安美术陶瓷厂、乾县工艺美术厂等单位，利用西安得天独厚的条件，仿制了唐三彩。他们以高超技艺，纯依古法的制作工艺，使所产三彩形象逼真、人物富有个性，马和骆驼具有感人的艺术魅力和独特风格，被视为瑰宝.
+                <br>
+                <br>
+                <br>            
+                <br>            
+                参考价格：150元~1500元
+            </div>
+        </div>
+    </a>
+    </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/xian/3.jpg">
+            </div>
+            <div class="item-text">
+                <a href="">
+                <div class="item-title">皮影</div>
+                <div class="item-content">                
+                    简介：皮影俗称“灯影戏”，有“电影始祖”之美称，是中华民族传统戏剧之一。陕西是皮影发源地，尤其在关中一带十分广泛，仅传统戏剧目就有数百本，唱腔就有几十种之多。皮影工艺品在旅游商店、各个旅游点外的纪念品销售处几乎都有出售。
+                    <br>
+                    <br>
+                    <br>                  
+                    参考价格：50元~250元
+                </div>
+            </div>
+        </a>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/xian/4.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">仿秦兵马俑</div>
+                <div class="item-content">                
+                    简介：随着秦兵马俑的发掘与展出，秦兵马俑复制品也日渐成为中外游客理想的纪念品和礼品。仿秦兵马俑满足了中外游人的购物需求，使秦俑走出陕西，遍迹世界。
+                    <br>
+                    <br>
+                    <br>                  
+                    <br>                  
+                    <br>                  
+                    参考价格：10元~100元
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/xian/5.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">蓝田玉石</div>
+                <div class="item-content">                
+                    简介：蓝田玉是我国开发利用最早的玉种之一，迄今已有4000多年的历史了，被历代皇室和显贵都视蓝田玉为珍宝。蓝田玉多为色彩分明的多色玉，色泽好、花纹奇，传说唐玄宗送给杨贵妃的定情信物就是蓝田玉。
+                    <br>
+                    <br>
+                    <br>                  
+                    <br>                  
+                    参考价格：无
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/xian/6.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">黄桂稠酒</div>
+                <div class="item-content">                
+                    简介：黄桂稠酒选用优质的糯米和小曲为原料，酿造工艺讲究。在整个酿制过程中，从糯米淘洗到拌曲、装坛、压酒等十多道工序，都有明确的规程。成品酒液中配有中药黄桂，状如牛奶，汁稠醇香，绵甜适口，酒精含量在15%左右。饮用时根椐需要可放在水锅中加热烧开热饮，还可根据口味加入白糖。相传“李白斗酒诗百篇”所饮即为稠酒。
+                    <br>
+                    <br>                           
+                    参考价格：20元左右
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/xian/7.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">碑林拓片</div>
+                <div class="item-content">                
+                    简介：西安碑林是我国书法名碑的荟萃之地，这里的碑石拓片包括颜真卿、柳公权、欧阳洵、褚遂良、怀素等大书法家的作品，是书法爱好者留念或赠送亲友的佳品。不过市面上售卖的拓片主要是原始拓片的复制品，每张参考价位10元左右。真正的原始拓片价位高，而且量少。
+                    <br>
+                    <br>                           
+                    <br>                           
+                    参考价格：10元左右
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/xian/2.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">陶哨</div>
+                <div class="item-content">                
+                        简介：哨是历史悠久的汉族民俗玩具，其中西安的鱼化寨陶哨远近闻名。其特点是造型小巧、声调雄壮，是用黑土和泥放在模子中成型，再经烧制、彩绘、罩油等多道工序制成的。
+                    <br>
+                    <br>              
+                    <br>              
+                    <br>              
+                    参考价格：10元~30元
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/xian/8.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">德懋恭水晶饼</div>
+                <div class="item-content">                
+                        简介：水晶饼是一种酥皮点心，因其馅晶莹透亮，犹如水晶而得其名。成品皮酥馅足，滋润适口，层次分明，油多不腻，糖重口渗甜，而且具有浓郁的玫瑰和橘饼清香。水晶饼面色金黄，四周雪白，素有“金底银帮鼓鼓腔，红色印章盖中央”的赞誉，被称为“秦点之首”。
+                    <br>                     
+                    <br>                     
+                    <br>                     
+                    参考价格：25元左右
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="tp2">
+    <div>
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/lanzhou/5.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">洮砚</div>
+                <div class="item-content">                
+                    简介：与广东端砚、安徽歙砚齐名，是久负盛名的中国三大名砚之一。其石料出自甘肃卓尼县东北50多公里处的洮砚乡喇嘛崖。花色品种有三边雕花砚、池头雕花砚、杂形雕花砚、自然雕花砚、素砚等五大类。
+                    <br>                     
+                    <br>                     
+                    <br>                              
+                    <br>                                        
+                    参考价格：40元~850元
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/lanzhou/1.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">三泡台茶</div>
+                <div class="item-content">                
+                        简介：源于盛唐时期，明清时期传入西北，与当地穆斯林饮茶习俗相结合， 形成了独树一帜的、具有浓郁地方特色的茶品。三泡台，是用上等的菊花、福建桂圆、新疆葡萄干、甘肃临泽小枣、荔枝干、优质冰糖为佐料配制而成。
+                    <br>                     
+                    <br>                     
+                    <br>                     
+                    <br>                            
+                    参考价格：30元左右
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/lanzhou/2.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">永登玫瑰</div>
+                <div class="item-content">                
+                    简介：永登是我国最大的玫瑰种植基地之一。苦水玫瑰花不仅色泽鲜艳，浓郁芳香，而且产油量高、油品质好。永登玫瑰泡茶，有美容养颜的功效。
+                    <br>                     
+                    <br>                     
+                    <br>                     
+                    <br>                     
+                    <br>                            
+                    参考价格：25元左右
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/lanzhou/3.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">兰州黑瓜子</div>
+                <div class="item-content">                
+                    简介：被誉为“兰州大片”，是兰州著名的特产，以其片大、皮薄、板平、口松、肉厚、乌黑发亮、味香隽永、品质优异等特点而著称。 黑瓜子可加工成五香、奶油、咸淡、甜味、多味等各种类型的瓜子。
+                    <br>                     
+                    <br>                     
+                    <br>                              
+                    <br>                            
+                    参考价格：15元左右
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/lanzhou/4.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">刻葫芦</div>
+                <div class="item-content">                
+                    简介：刻葫芦是兰州的传统特种工艺品，即在葫芦上刻画出人物、建筑、山水、动物、文字等。最常见的刻葫芦，刻画的是山水风景或戏剧人物的脸谱，作为儿童玩具出售。
+                    <br>                     
+                    <br>                     
+                    <br>                              
+                    <br>                              
+                    <br>                            
+                    参考价格：20元~150元
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/lanzhou/6.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">套料花瓶</div>
+                <div class="item-content">                
+                    简介：套料花瓶是兰州玻璃厂精制的一种工艺品，以独具特色的艺术造型和晶莹透亮的珠宝色名冠海内外。经过溶化、小泡、大泡、起底、开口、担花、退火等20多道工序，可用手工生产出80多种花瓶造型。制作工艺精巧细腻，玲珑剔透，美观大方，为高雅的馈赠礼品。
+                    <br>                     
+                    <br>                                               
+                    <br>                                        
+                    参考价格：40元~350元
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/lanzhou/7.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">卵石雕</div>
+                <div class="item-content">                
+                    简介：兰州卵石雕是选用经过黄河水千万年冲刷磨砺而成的卵石，依照其自然形态和花纹，用琢玉的方法精制的工艺美术品，由甘肃工艺美术厂的玉雕师芩新伟于1974年首创，深受广大群众青睐。
+                    <br>                     
+                    <br>                                               
+                    <br>                                               
+                    <br>                                           
+                    参考价格：40元~150元
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/lanzhou/8.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">黄河石</div>
+                <div class="item-content">                
+                    简介：黄河石是中华民族的发祥地，黄河文化源远流长。黄河母亲这神工巨匠塑造了千姿百态，形象生动，异彩纷呈的奇石。黄河奇石是天然形成的具有观赏、玩味、陈列和收藏价值的陈列和收藏价值的黄河卵石。
+                    <br>                     
+                    <br>                                               
+                    <br>                                               
+                    <br>                                           
+                    参考价格：100元~1500元
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="tp3">
+    <div>
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/wulumuqi/1.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">英吉沙小刀</div>
+                <div class="item-content">                
+                    简介：因产地在英吉沙县而得名，约有400多年的历史。它选料精良，做工考究，造型美观，纹饰秀丽，具有浓郁的民族风格。小刀主要有维吾尔族喜爱的凤尾式、百灵鸟式、黄鹂式、喜鹊式，哈萨克族喜爱的红嘴山鸦式、汉族喜爱的龙泉剑式、蒙古族喜爱的兽角式等。
+                    <br>                     
+                    <br>                                         
+                    <br>                                           
+                    参考价格：50元~300元
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/wulumuqi/2.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">艾德莱斯绸</div>
+                <div class="item-content">                
+                    简介：维吾尔族妇女十分喜爱的丝绸料，以色彩绚丽、鲜艳著称。用色反差大，对比强烈。它常用翠绿、宝蓝、黄、青、桃红、紫红、桔、金黄、艳绿、黑、白等色；图案结构细腻、紧凑、严谨，色彩强烈、透明、逼真，再现了大自然中光和色的美感。
+                    <br>                     
+                    <br>                                         
+                    <br>                                           
+                    参考价格：30元~300元
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/wulumuqi/3.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">葡萄干</div>
+                <div class="item-content">                
+                    简介：新疆优质的葡萄干都是以吐鲁番的无核白葡萄为原料，经本地特有凉房纯自然风干，晾制出的葡萄干色泽纯正、风味独特，是不可多得的天然健康食品。
+                    <br>                     
+                    <br>                                         
+                    <br>                                         
+                    <br>                                         
+                    <br>                                           
+                    参考价格：30元左右
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/wulumuqi/4.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">巴旦木</div>
+                <div class="item-content">                
+                    简介：巴旦木又名巴旦杏，也有俗称薄壳杏仁，是新疆维吾尔人民最珍视的干果，主要产在天山以南喀什绿洲的疏附、英吉沙、莎车、叶城等县。
+                    <br>                     
+                    <br>                                         
+                    <br>                                         
+                    <br>                                         
+                    <br>                                           
+                    参考价格：30元左右
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/wulumuqi/5.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">花帽</div>
+                <div class="item-content">                
+                    简介：花帽，维语称之为“朵巴”，系维吾尔男女老幼都喜爱佩戴的帽子，这小花帽呈四楞圆顶状，不但实用，而且是一种具有装饰美感的工艺品。花帽上，一般用黑白两色或彩色的丝线绣出民族形式的花纹图案。花帽既是维吾尔人日常生活必需，又是馈赠亲朋好友及贵客嘉宾的珍贵礼品。
+                    <br>                     
+                    <br>                                         
+                    <br>                                                                            
+                    参考价格：30元~200元
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/wulumuqi/6.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">热瓦普</div>
+                <div class="item-content">                
+                    简介：热瓦普是维吾尔、乌孜别克、塔吉克等民族常用的弹拨乐器。琴身为木制，音箱为半球形，以羊皮、驴皮、马皮或蟒皮蒙面。琴颈细长，顶部弯曲。
+                    <br>                     
+                    <br>                     
+                    <br>                     
+                    <br>                                         
+                    <br>                                                                            
+                    参考价格：250元~2000元
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/wulumuqi/7.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">玉雕制品</div>
+                <div class="item-content">                
+                    简介：新疆玉雕刻厂是新疆第一家玉石雕刻专业厂家。主要采用驰名中外的和田白玉、玛纳斯碧石、哈密黄玉料，生产花瓶、乌鲁、花卉、人物等仿古器皿及各种首饰佩件等。产品远销欧美、日本、东南亚等国及港澳地区。
+                    <br>                     
+                    <br>                     
+                    <br>                                         
+                    <br>                                                                            
+                    参考价格：无
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/wulumuqi/8.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">新疆地毯</div>
+                <div class="item-content">                
+                    简介：新疆地毯不仅国内驰名，在国际上也享有盛誉。其毯面光泽平滑，毯板挺实柔和，美观大方，色调鲜丽，更具鲜明的民族特点和浓厚的地方色彩的地毯图案，在国际地毯业中也独树一帜。新疆地毯作为新疆重要的传统名贵出口商品博得了世界各地用户的好评，被称为独具一格的“东方式”地毯。
+                    <br>                     
+                    <br>        
+                    参考价格：200元~10000元
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script  type="text/template" id="tp4">
+    <div>
+        <div class="goodsdetail">
+            <div class="item-img">
+                <img src="../img/shop/samaerhan/1.jpg">
+            </div>
+            <div class="item-text">
+                <div class="item-title">黑加仑葡萄干</div>
+                <div class="item-content">                
+                    简介：黑加仑葡萄生长在阿勒泰山脉以北地区，由于受冷气候影响，生长时间长，天生是黑色的外表，是世界少见的葡萄干。在新疆、乌兹别克斯坦盛产。
+                    <br>                     
+                    <br>                     
+                    <br>                     
+                    <br>                     
+                    <br>        
+                    参考价格：30元左右
+                </div>
+            </div>
+        </div>
+
+        <div class="goodsdetail">
+                <div class="item-img">
+                    <img src="../img/shop/samaerhan/2.jpg">
+                </div>
+                <div class="item-text">
+                    <div class="item-title">Suzani</div>
+                    <div class="item-content">                
+                        简介：“suzani”（波斯语：suzan）是乌兹别克斯坦的一种传统针绣工艺。从历史上来看，首批“suzani”绣品出现在 18 世纪末期，即哈泽·穆拉特时期。在 1921 年灭亡之前，布哈拉埃米尔国醉心于奢华珍贵之物，定制了不少绣品，如华丽服饰、帷幔与配饰，尤其是铺在马背上的毯子。
+                        <br>                     
+                        <br>                     
+                        <br>      
+                        参考价格：200元~1000元
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="goodsdetail">
+                    <div class="item-img">
+                        <img src="../img/shop/samaerhan/3.jpg">
+                    </div>
+                    <div class="item-text">
+                        <div class="item-title">陶艺</div>
+                        <div class="item-content">                
+                            简介：餐盘、瓦罐以及其他独特的瓷器以城市典型的各种黄色或绿色色调为主，与历史悠久的陶瓷胜地费尔干纳盆地所特有的蓝色色调形成了对比。
+                            <br>                     
+                            <br>                     
+                            <br>                     
+                            <br>                     
+                            <br>        
+                            参考价格：150元左右
+                        </div>
+                    </div>
+                </div>
+
+                <div class="goodsdetail">
+                        <div class="item-img">
+                            <img src="../img/shop/samaerhan/4.jpg">
+                        </div>
+                        <div class="item-text">
+                            <div class="item-title">布哈拉地毯</div>
+                            <div class="item-content">                
+                                简介：乌兹别克斯坦的古市集依然活跃，布哈拉人擅长手工艺制作，布哈拉的古地毯是古董地毯中的精品。
+                                <br>                     
+                                <br>                     
+                                <br>                     
+                                <br>                     
+                                <br>                     
+                                <br>        
+                                参考价格：无
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="goodsdetail">
+                            <div class="item-img">
+                                <img src="../img/shop/samaerhan/5.jpg">
+                            </div>
+                            <div class="item-text">
+                                <div class="item-title">木雕</div>
+                                <div class="item-content">                
+                                    简介：这一行业在乌兹别克斯坦人的血液中流淌，世代相传。即使在城市里漫不经心地走着，你也会在无意间发现到处都是木雕支柱与门窗。
+                                    <br>                     
+                                    <br>                     
+                                    <br>                     
+                                    <br>                       
+                                    <br>        
+                                    参考价格：3000欧元以上
+                                </div>
+                            </div>
+                        </div>
+    </div>
+</script>
+
+<script  type="text/template" id="tp5">
+    <div>
+            <div class="goodsdetail">
+                    <div class="item-img">
+                        <img src="../img/shop/deheilan/1.jpg">
+                    </div>
+                    <div class="item-text">
+                        <div class="item-title">骆驼骨笔盒、首饰盒</div>
+                        <div class="item-content">                
+                            简介：用骆驼的骨头制成的首饰盒和笔盒，表面饰以波斯传统的几何和花草等图案。现在为适应旅游市场的需求，也有伊朗风景名胜、马、波斯美女等图案。价格是按照图案的细致程度来定的。 
+                            <br>                     
+                            <br>                     
+                            <br>                     
+                            <br>        
+                            参考价格：无
+                        </div>
+                    </div>
+                </div>
+
+                <div class="goodsdetail">
+                        <div class="item-img">
+                            <img src="../img/shop/deheilan/2.jpg">
+                        </div>
+                        <div class="item-text">
+                            <div class="item-title">绿松石</div>
+                            <div class="item-content">                
+                                简介：绿松石是一种十分古老的玉石，英文为Turquoise，即“土耳其石”，因盛产绿松石的伊朗古代时通过土耳其将它们输往欧洲而得名， 土耳其本身不产绿松石。绿松石中的上品就称为“波斯级”绿松石。
+                                <br>                     
+                                <br>                     
+                                <br>          
+                                <br>          
+                                参考价格：无
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="goodsdetail">
+                            <div class="item-img">
+                                <img src="../img/shop/deheilan/3.jpg">
+                            </div>
+                            <div class="item-text">
+                                <div class="item-title">彩绘陶瓷</div>
+                                <div class="item-content">                
+                                    简介：彩绘陶瓷伊朗艺术家用大小不同的、猫毛制成的画笔蘸取颜料，小心翼翼地在铜胎瓷器上勾画出伊斯兰艺术世界特有的图案。用色方面乍一看全是蓝色，其实这些蓝色也有细微的深浅变化，靛蓝、天蓝、浅蓝等蓝色系列的巧妙运用，更体现出这门艺术的细致入微。           
+                                    <br>          
+                                    <br>          
+                                    <br>          
+                                    参考价格：无
+                                </div>
+                            </div>
+                        </div>
+
+            <div class="goodsdetail">
+                    <div class="item-img">
+                        <img src="../img/shop/deheilan/4.jpg">
+                    </div>
+                    <div class="item-text">
+                        <div class="item-title">开心果糖</div>
+                        <div class="item-content">                
+                            简介：伊朗是世界开心果主要生产国和出口国，开心果年产量达几十万吨。开心果在伊朗被制成不同食品，比如，开心果糖。这种糖的口味比较复杂，很难描述，但很好吃。 
+                            <br>                     
+                            <br>                     
+                            <br>                     
+                            <br>                     
+                            <br>        
+                            参考价格：50元左右
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="goodsdetail">
+                        <div class="item-img">
+                            <img src="../img/shop/deheilan/5.jpg">
+                        </div>
+                        <div class="item-text">
+                            <div class="item-title">番红花</div>
+                            <div class="item-content">                
+                                简介：番红花就是我们所说的藏红花，原产地为伊朗和地中海地区。古代经过丝绸之路经西藏运到中原，就被称作了藏红花。《本草纲目》将其列入药物，也是世界上最为贵重的香料和染料。有活血化瘀、凉血解毒、降压降脂等功能，对月经不调、抗衰老、美容养颜效果很好。  
+                                <br>                     
+                                <br>                     
+                                <br>            
+                                参考价格：100元~300元
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="goodsdetail">
+                            <div class="item-img">
+                                <img src="../img/shop/deheilan/6.jpg">
+                            </div>
+                            <div class="item-text">
+                                <div class="item-title">波斯地毯</div>
+                                <div class="item-content">                
+                                    简介：波斯地毯在世界上享有盛誉。据考证，其编织和生产的历史至少已经有2500年。波斯地毯的一大特色是其染料从天然植物和矿石中提取，染色经久不褪不变，还能防虫蛀。其原料有真丝、棉、麻等。纯真丝的地毯为顶级。图案多为抽象的植物、伊斯兰文字和几何图案，现在的波斯地毯也有以照片或油画为设计图案的。
+                                    <br>                     
+                                    <br>                                
+                                    参考价格：1500元以上
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="goodsdetail">
+                                <div class="item-img">
+                                    <img src="../img/shop/deheilan/7.jpg">
+                                </div>
+                                <div class="item-text">
+                                    <div class="item-title">椰枣</div>
+                                    <div class="item-content">                
+                                        简介：学名叫无漏子，补中益气，止咳润肺，化痰平喘。其所含纤维素非常柔软，不会对敏感的胃肠造成伤害，可治疗胃溃疡：用全生牛奶与去皮蜜枣浸泡即可；枣椰子的种籽含有丰富的男性荷尔蒙成份。椰枣表皮的白色粉物为天然糖衣，可食用。 
+                                        <br>                     
+                                        <br>                     
+                                        <br>            
+                                        参考价格：30元左右
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="goodsdetail">
+                                    <div class="item-img">
+                                        <img src="../img/shop/deheilan/8.jpg">
+                                    </div>
+                                    <div class="item-text">
+                                        <div class="item-title">鱼子酱</div>
+                                        <div class="item-content">                
+                                            简介：鱼子酱（Caviar），又称鱼籽酱，鲟鳇鱼卵、鲑鱼卵等的腌制品。在波斯语中意为鱼卵，严格来说，只有鲟鱼卵才可称为鱼子酱，其中以产于接壤伊朗和俄罗斯的里海的鱼子酱质量为佳。
+                                            <br>                     
+                                            <br>                                
+                                            <br>                                
+                                            <br>                                
+                                            参考价格：200元~500元
+                                        </div>
+                                    </div>
+                                </div>
+
+    
+    </div>
+</script>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/shopapp.js"></script>
+</html>

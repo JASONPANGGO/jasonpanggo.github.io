@@ -1,33 +1,125 @@
 /* CSS Document */
-.button1 {
-	width:339px;
-	line-height: 20px;
+.destination {
+	background-color: white;
+	color: black;
+	font-weight: 500;
+}
+
+.destination:hover {
+	color: orange;
+}
+
+.home {
+	background-color: orange;
+	color: white;
+	font-weight: bold;
+}
+
+.home:hover {
+	color: white;
+}
+
+.eyebrow {
+    width: 100%;
+    height: 4px;
+    float: left;
+	background-color: rgba(1,1,1,0.2);
+	
+}
+
+.toe {
+	width: 100%;
+    height: 10px;
+    float: left;
+	background-color: rgba(1,1,1,0.2);
+	margin-top: 490px;
+}
+
+.blur {
+	-webkit-filter: blur(2px);
+	float: left;
+	width: 100%;
+	height: 50px;
 }
 
 .head {
 	margin:0;
 	width: 100%;
 	height: 500px;
-}
-
-.navbar {
-	z-index:inherit;
-	position:fixed;
-	opacity: 0.8;
-}
-
-.navbar:hover  {
-	opacity: 1
+	background-image: url("../img/head.png");
+	background-repeat: no-repeat;
+	background-size: 110%;
 }
 
 .map {
-	height: 500px;
-	background-color:#353535;
+	background-size: 100%;
+	background-image: url("../img/map.png");
+	margin-top: 0;
+	padding-top: 100px;
+	background-color: orange;
+	height: 3500px;
 	position:relative;
-	z-index: -1;
 }
 
 .headmenu {
 	display: none;
 	list-style: none;
-} 
+}
+
+.xianlogo, .lanzhoulogo, .wululogo, .samalogo, .deheilanlogo, .moscowlogo, .lutedanlogo, .weinisilogo, .yisitanlogo {
+	position: absolute;
+	width: 300px;
+	height: 100%;
+}
+
+.xianlogo {
+	margin-top:50px;
+	margin-left: 250px;
+}
+
+.lanzhoulogo {
+	margin-top: 560px;
+	margin-left: 1050px;
+}
+
+.wululogo {
+	width: 150px;
+	margin-top: 750px;
+	margin-left: 230px;
+}
+
+.samalogo {
+	width: 420px;
+	margin-top: 1100px;
+	margin-left: 700px;
+}
+
+.deheilanlogo {
+	width: 400px;
+	margin-top: 1750px;
+	margin-left: 1000px;
+}
+
+.yisitanlogo {
+	width: 500px;
+	margin-top: 1850px;
+	margin-left: 200px;
+}
+
+.moscowlogo {
+	width: 400px;
+	margin-top: 2300px;
+	margin-left: 1000px;
+}
+
+.lutedanlogo {
+	width: 400px;
+	margin-top: 2500px;
+	margin-left: 150px;
+}
+
+.weinisilogo {
+	width: 400px;
+	margin-top: 2900px;
+	margin-left: 850px;
+}

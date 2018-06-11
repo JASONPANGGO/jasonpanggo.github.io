@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>历史</title>
+    <link rel="icon" type="image/x-icon" href="../camel.ico"/> 
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/historystyle.css">
+    <link rel="stylesheet" href="../css/fontawesome-all.css">
+    <link rel="stylesheet" href="../css/button.css">
+    <script src="../js/fontawesome-all.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-router.min.js"></script>
+</head>
+<body>
+        <div class="navigation">
+                <a class="logo" href="../index.html">
+                </a>
+                <a class="home" href="../index.html">首页</a>
+                <a class="destination" href="../index.html#map">目的地</a>
+                <a class="history" href="history.html">历史</a>
+                <a class="story" href="diangu.html">典故</a>
+                <a class="shop" href="shop.html">丝绸商城</a>
+                <a class="weibo" href="#"></a>
+                <a class="qq" href="#"></a>
+                <a class="wechat" href="#"></a>
+                <a class="login" href="login.html">登录</a>
+                <a class="signup" href="signup.html">注册</a>
+            </div>
+    <div class="timeline">
+        <div class="eyebrow"></div>
+        <router-link to="/xian">
+        <div class="xianlogo">
+            <img src="../img/xian.png">
+        </div>
+        </router-link>
+        
+        <router-link to="/lanzhou">
+        <div class="lanzhoulogo">
+            <img src="../img/lanzhou.png">
+        </div>
+        </router-link>
+
+        <router-link to="/wulu">
+        <div class="wululogo">
+            <img src="../img/wulumuqi.png">
+        </div>
+        </router-link>
+
+        <router-link to="/sama">
+        <div class="samalogo">
+            <img src="../img/samaerhan.png">
+        </div>
+        </router-link>
+
+        <router-link to="/deheilan">
+        <div class="deheilanlogo">
+            <img src="../img/deheilan.png">
+        </div>
+        </router-link>
+
+        <router-link to="/yisi">
+            <div class="yisilogo">
+                <img src="../img/yisitan.png">
+            </div>
+        </router-link>
+
+        <router-link to="/moscow">
+            <div class="moscowlogo">
+                <img src="../img/moscow.png">
+            </div>
+        </router-link>
+
+        <router-link to="/lutedan">
+            <div class="lutedanlogo">
+                <img src="../img/lutedan.png">
+            </div>
+        </router-link>
+
+        <router-link to="/weinisi">
+            <div class="weinisilogo">
+                <img src="../img/weinisi.png">
+            </div>
+        </router-link>
+
+       <router-view></router-view>
+    </div>
+</body>
+
+<script type="text/template" id="tp1">
+<div class="display animated fadeIn">
+    <div class="left animated fadeInDown">
+            <div class="title">丝路历史 - 西安</div>
+        <img src="../img/history/xian.jpg">
+    </div>
+    <div class="right animated fadeInUp">
+            <p>西安作为世界四大古都之一，有3000余年的建城史和1100年的建都史，其中尤以汉、唐时最为繁盛，这也是西安对中华历史和文化影响最为巨大的时期。追根溯源，丝绸之路的开通和繁荣是西安能够发挥巨大影响力的重要条件。</p>
+            <p>
+            由于科技条件的限制，陆路交通是汉唐时期远距离交流的最好选择。自汉代张骞“凿空”西域之后，一条通往西域的道路——丝绸之路就成为中西交通的纽带。当时的路线东端起自古都长安，向西沟通中亚、西亚和欧洲，丝绸之路是当时中外贸易和交往的主通道，通过这条贯穿亚欧的大道，中国的丝、绸、绫、缎、绢等丝制品，源源不断地运向中亚和欧洲，其情景恰如唐代诗人张籍在《凉州词》中所描绘的“无数铃声遥过碛，应驮白练到安西”。因此，希腊、罗马人称中国为赛里斯国，“赛里斯”即丝绸之意。19世纪末，德国地质学家李希霍芬将这条东西大道誉为“丝绸之路”。德国人胡特森在《丝路》一书中沿用了这一名称。从此，丝绸之路这一称谓得到世界的承认。</p>
+    </div>
+    <div class="back">
+        <router-link to="/">
+        <button class="button button-large button-plain button-border button-circle">
+            <i class="fa fa-reply"></i>
+        </button>
+        </router-link>
+    </div>
+</div>
+</script>
+
+<script type="text/template" id="tp2">
+    <div class="display animated fadeIn">
+            <div class="left animated fadeInDown">
+                    <div class="title" style="font-size:25px;">兰州：古丝绸之路重镇，历代兵家必争之地</div>
+                <img src="../img/history/lanzhou.jpg">
+            </div>
+            <div class="right animated fadeInUp">
+                <p>
+                    兰州这座古老的城始建于公元前86年。其名，据说因在筑城时掘出黄金，故名金城。另有一种说法是源于“金城汤池”的典故，喻其坚固不摧。两汉、魏晋时在此设置金城县。隋开皇三年(公元583年)，隋文帝设兰州总管府，“兰州”之称，始载入史册。后来历史几经浮沉，虽州、郡数次易名，但兰州的建置沿革基本固定，相沿至今。</p>
+                    <p>
+    兰州是古丝绸之路重镇，其因为地处咽喉，扼守交通要冲，“控河为险，隔阂戎羌”，当为必经之地，自古以来位居襟喉要地，也是历代兵家必争之地。</p>
+            </div>
+            <div class="back">
+                <router-link to="/">
+                <button class="button button-large button-plain button-border button-circle">
+                    <i class="fa fa-reply"></i>
+                </button>
+                </router-link>
+            </div>
+        </div>
+</script>
+
+<script type="text/template" id="tp3">
+    <div class="display animated fadeIn">
+            <div class="left animated fadeInDown">
+                    <div class="title" style="font-size:25px;">
+                            乌鲁木齐：新疆的唯一性地位</div>
+                <img src="../img/history/wulu.jpg">
+            </div>
+            <div class="right animated fadeInUp">
+                <p>
+                        提到新疆，我们第一个想到的就是其三山夹两盆的地形特点，它的唯一性地位是由亚欧大陆自然地理环境环境决定的。打开亚欧大陆地形图可以清晰地看见，帕米尔高原以南青藏高原、云贵高原、高山雪峰、峡谷激流、丛林险滩完全制约了古代较大规模的东西方向人类移动。帕米尔高原通道和昆仑山北缘通道就成为丝绸之路上通往中亚的唯一大通道。</p>
+                    <p>
+                            乌鲁木齐，不仅是古丝绸之路上的“文化之都”，也是东西方经济文化的交汇点、中原与西域经济文化的融合处，它像一颗璀璨的明珠静静地坐落在祖国的西北边陲。作为新疆首府，乌鲁木齐集聚个性、多元、交汇、融合多重特色，有太多让人迷恋和喜欢的地方。</p>
+            </div>
+        <div class="back">
+            <router-link to="/">
+            <button class="button button-large button-plain button-border button-circle">
+                <i class="fa fa-reply"></i>
+            </button>
+            </router-link>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="tp4">
+    <div class="display animated fadeIn">
+            <div class="left animated fadeInDown">
+                    <div class="title" style="font-size:25px;">
+                            撒马尔罕：丝绸之路文明的“心脏”</div>
+                <img src="../img/history/sama.jpg">
+            </div>
+            <div class="right animated fadeInUp">
+                <p>
+                        中亚的地理中心和文明“心脏”无疑是丝绸之路的中心乌兹别克斯坦，它是“丝绸之路”上最重要的历史文化名城之一。作为中亚的历史名城，已有2500年的历史，关于它的记载最早可以追溯到公元前5世纪。善于经商的粟特人把撒马尔罕建造成一座美轮美奂的都城。公元前4世纪，当马其顿帝国的亚历山大大帝攻占该城时不禁赞叹：“我所听说到的一切都是真实的，只是撒马尔罕要比我想象中更为壮观。</p>
+                    <p>
+                            撒马尔罕连接着波斯、印度和中国这三大帝国，作为丝绸之路上重要的枢纽城市，最耀眼的丝路明珠几乎都聚集在这里。在这个欧亚大陆间的通衢要地，中国丝绸、印度棉布、西亚毛织品、西方玻璃器皿在这里聚汇，使它充满了奇异的美。古波斯和马其顿的王朝、中国的汉唐皇帝、阿拉伯哈里发帝国，以及成吉思汗和帖木儿相继把自己的文化性格注入这里，经过时间的凝固和沉淀，为她留下了丰富的文化层。
+</p>
+            </div>
+        <div class="back">
+            <router-link to="/">
+            <button class="button button-large button-plain button-border button-circle">
+                <i class="fa fa-reply"></i>
+            </button>
+            </router-link>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="tp5">
+    <div class="display animated fadeIn">
+            <div class="left animated fadeInDown">
+                    <div class="title" style="font-size:25px;">
+                            德黑兰</div>
+                <img src="../img/history/deheilan.jpg">
+            </div>
+            <div class="right animated fadeInUp">
+                <p>安息帝国又称帕提亚帝国（公元前247年—公元224年）（现伊朗）是亚洲西部伊朗地区古典时期的奴隶制帝国。</p>
+                    <p>全盛时期的安息帝国疆域北达小亚细亚东南的幼发拉底河，东抵阿姆河。是丝绸之路上的商贸中心，被认为是当时亚欧四大强国之一，与汉朝、罗马、贵霜帝国并列。</p>
+                    <p>安息帝国在中东存在四百七十余年，它由很多小地区、小部落组成，很不稳定，不是一个政治上强有力的中央集权的国家。但因它在地理上居欧亚贸易要道，而在经济上得以繁荣。古代"丝绸之路"和几条重要支路都要穿过安息。</p>
+            </div>
+        <div class="back">
+            <router-link to="/">
+            <button class="button button-large button-plain button-border button-circle">
+                <i class="fa fa-reply"></i>
+            </button>
+            </router-link>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="tp6">
+    <div class="display animated fadeIn">
+            <div class="left animated fadeInDown">
+                    <div class="title" style="font-size:25px;line-height:30px;">
+昔日君士坦丁堡，今朝伊斯坦布尔！"丝绸之路"亚洲部分的终点！</div>
+                <img src="../img/history/yisi.jpg">
+            </div>
+            <div class="right animated fadeInUp">
+                <p>伊斯坦布尔建于亚洲、欧洲两大洲结合部，是"丝绸之路"亚洲部分的终点。它先后是东罗马、拜占廷、奥斯曼三大帝国的首都，一直是重要的政治、宗教和艺术中心，东西方文化、伊斯兰教和基督教在这里相交流、相渗透，是东西方交流的重要地区。在历史上，伊斯坦布尔是一个商业中心，是黑海诸国商船必经之路，从亚洲丝绸之路和从中东、欧洲来的商品在这里形成一个集散地，是世界商贾云集地。
+                </p>
+            </div>
+        <div class="back">
+            <router-link to="/">
+            <button class="button button-large button-plain button-border button-circle">
+                <i class="fa fa-reply"></i>
+            </button>
+            </router-link>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="tp7">
+    <div class="display animated fadeIn">
+            <div class="left animated fadeInDown">
+                    <div class="title" style="font-size:25px;line-height:30px;">
+                        莫斯科</div>
+                <img src="../img/history/moscow.jpg">
+            </div>
+            <div class="right animated fadeInUp">
+                <p>俄罗斯南部民族在社会文化发展上深受丝绸之路的影响，尽管有着不同的语言、历史传统和宗教信仰，但都因交流互通而和谐共居于同一个历史空间内，丝绸之路也因此成为将这些不同地区和民族联系在一起，并为他们带去繁荣的交通要道。
+                </p>
+                <p>丝绸之路在东西方交流上发挥了重要的作用。在经济交流方面，丝绸之路给中国带来了葡萄、核桃、胡萝卜、胡椒、胡豆、菠菜、黄瓜、石榴等，为中国人的日常饮食增添了更多的选择。西域特产的葡萄酒经过历史的发展融入到中国的传统酒文化当中。中国通过丝绸之路为世界提供了铁器、金器、银器、镜子和其他奢侈品牌。在文化交流方面，造纸术、印刷术、井渠技术和穿井法经丝绸之路由中国传向世界，使文化能够以更加便捷和低廉的方式传播，从而改变了世界历史发展进程。</p>
+            </div>
+        <div class="back">
+            <router-link to="/">
+            <button class="button button-large button-plain button-border button-circle">
+                <i class="fa fa-reply"></i>
+            </button>
+            </router-link>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="tp8">
+    <div class="display animated fadeIn">
+            <div class="left animated fadeInDown">
+                    <div class="title" style="font-size:25px;line-height:30px;">
+                        鹿特丹：“欧洲的门户”</div>
+                <img src="../img/history/lutedan.jpg">
+            </div>
+            <div class="right animated fadeInUp">
+                <p> 鹿特丹是位于莱茵河、马斯河以及斯凯尔特河所形成的“金三角洲”,并且隔海与英伦三岛互相眺望。鹿特丹不仅是通往世界各地的国际海港,而且也是内河航运的枢纽。并且莱茵河还与运河及其它河流接通,它是欧洲航运河中最繁忙的一条国际化河流,仅一条莱茵河,就等同于20～30条铁路的运输量。鹿特丹得益于其港口、机场、高质量的基础设施，与世界各地的互联互通，以及信息和通信技术设施，因此在连通性方面位居欧洲第一,所以被称为“欧洲的门户”。
+                </p>
+            </div>
+        <div class="back">
+            <router-link to="/">
+            <button class="button button-large button-plain button-border button-circle">
+                <i class="fa fa-reply"></i>
+            </button>
+            </router-link>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="tp9">
+    <div class="display animated fadeIn">
+            <div class="left animated fadeInDown">
+                    <div class="title" style="font-size:25px;line-height:30px;">
+                        威尼斯</div>
+                <img src="../img/history/weinisi.jpg">
+            </div>
+            <div class="right animated fadeInUp">
+                <p>丝绸之路千年益友---意大利人</p>
+                <p>中意人民分布在丝绸之路的东西两端，丝绸之路之所以能形成并存在达两千年，这和丝绸之路的终点古意大利即罗马帝国的上流社会对时尚追求是分不开的，古代意大利上流社会甚至于整个欧洲的上流社会及都以能穿上产自中国的奢侈品-丝绸以自豪，这种对时尚的追求形成了古代丝绸之路的最强大的原始驱动力。同时古代中国和西方世界的交往，也是以中国和意大利两个民族的交往为先导的，意大利人总是在重大的时间窗口，承担起中国和西方的商贸文化科学等诸多交流，过去，现在，未来都是丝绸之路的重要使者和益友。</p>
+            </div>
+        <div class="back">
+            <router-link to="/">
+            <button class="button button-large button-plain button-border button-circle">
+                <i class="fa fa-reply"></i>
+            </button>
+            </router-link>
+        </div>
+    </div>
+</script>
+
+<script src="../js/historyapp.js"></script>
+</html>
