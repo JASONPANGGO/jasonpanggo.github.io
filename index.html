@@ -239,6 +239,138 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/19/华为快应用踩坑笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jason Pang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonPang's">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/19/华为快应用踩坑笔记/" itemprop="url">华为快应用踩坑笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-19T22:41:27+08:00">
+                2019-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="关于布局"><a href="#关于布局" class="headerlink" title="关于布局"></a>关于布局</h1><ul>
+<li><p>华为快应用的所有块级元素的display只有flex和none值，也就是说默认display: flex，默认的布局流将会从左到右进行，如若需要改成往常的从上到下布局，需要设置属性flex-direction: column。</p>
+</li>
+<li><p>华为快应用中的margin, padding只有百分比值(%)和长度(px)，没有auto，也就是说华为快应用的布局需要开发者熟练掌握flex布局。</p>
+</li>
+</ul>
+<h1 id="关于组件间通信"><a href="#关于组件间通信" class="headerlink" title="关于组件间通信"></a>关于组件间通信</h1><ul>
+<li>兄弟组件间通信</li>
+</ul>
+<p>当组件com1传值到组件com2</p>
+<p>组件com1中<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sendMessage()&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">this</span>.nextVm)&#123;</span><br><span class="line">    <span class="keyword">this</span>.nextVm.processMessage(<span class="string">'兄弟之间通信的消息内容'</span>);</span><br><span class="line">    <span class="comment">// this.nextVm.$emit('customEventInVm2', '兄弟之间通信的消息内容')</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>组件com2中<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">processMessage(msg)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(msg);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>com1和com2的共同父组件中<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">establishRef()&#123;</span><br><span class="line">      <span class="keyword">const</span> input = <span class="keyword">this</span>.$vm(<span class="string">'com1'</span>);</span><br><span class="line">      <span class="keyword">const</span> output = <span class="keyword">this</span>.$vm(<span class="string">'com2'</span>);</span><br><span class="line"></span><br><span class="line">      output.parentVm = <span class="keyword">this</span>;</span><br><span class="line">      output.previousVm = input;</span><br><span class="line">      input.parentVm = <span class="keyword">this</span>;</span><br><span class="line">      input.nextVm = output;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/27/使用Vue-cli搭建的清单应用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1468,7 +1600,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
