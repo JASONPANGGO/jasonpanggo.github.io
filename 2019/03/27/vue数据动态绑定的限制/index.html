@@ -79,13 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="JasonPang&#39;s">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+<meta name="description" content="在最近写的Vue项目中遇到数据绑定的坑，在通过methods的函数更新的data内的数组时，视图层没有进行动态更新，而此时数据层已经确定是产生了变更了。  这个问题就涉及到Vue数据绑定的一些无效的情况：    未在data内的定义的变量，Vue无法监听到其变化。 Vue中无法监听到data内对象的属性的添加，修改，删除。 Vue中对数组，通过下标直接修改的属性值无法监听。  所以当涉及到对da">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue数据动态绑定的限制">
+<meta property="og:url" content="http://yoursite.com/2019/03/27/vue数据动态绑定的限制/index.html">
 <meta property="og:site_name" content="JasonPang&#39;s">
+<meta property="og:description" content="在最近写的Vue项目中遇到数据绑定的坑，在通过methods的函数更新的data内的数组时，视图层没有进行动态更新，而此时数据层已经确定是产生了变更了。  这个问题就涉及到Vue数据绑定的一些无效的情况：    未在data内的定义的变量，Vue无法监听到其变化。 Vue中无法监听到data内对象的属性的添加，修改，删除。 Vue中对数组，通过下标直接修改的属性值无法监听。  所以当涉及到对da">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-27T14:56:20.675Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JasonPang&#39;s">
+<meta name="twitter:title" content="vue数据动态绑定的限制">
+<meta name="twitter:description" content="在最近写的Vue项目中遇到数据绑定的坑，在通过methods的函数更新的data内的数组时，视图层没有进行动态更新，而此时数据层已经确定是产生了变更了。  这个问题就涉及到Vue数据绑定的一些无效的情况：    未在data内的定义的变量，Vue无法监听到其变化。 Vue中无法监听到data内对象的属性的添加，修改，删除。 Vue中对数组，通过下标直接修改的属性值无法监听。  所以当涉及到对da">
 
 
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/03/27/vue数据动态绑定的限制/"/>
 
 
 
 
 
-  <title>Archive | JasonPang's</title>
+  <title>vue数据动态绑定的限制 | JasonPang's</title>
   
 
 
@@ -140,7 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,296 +228,156 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/vue数据动态绑定的限制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jason Pang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonPang's">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">vue数据动态绑定的限制</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-27T22:54:58+08:00">
+                2019-03-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Um..! 12 posts in total. Keep on posting.
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/02/微信小程序的初学心得/" itemprop="url">
-              
-                <span itemprop="name">微信小程序的初学心得</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-02T19:08:48+08:00"
-              content="2018-09-02" >
-          09-02
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/09/极简清单应用-by-Angular/" itemprop="url">
-              
-                <span itemprop="name">极简清单应用 by Angular</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-09T20:33:24+08:00"
-              content="2018-07-09" >
-          07-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/06/关于npm使用时的command-not-found/" itemprop="url">
-              
-                <span itemprop="name">关于npm使用时的command not found</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-06T22:03:36+08:00"
-              content="2018-07-06" >
-          07-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <ul>
+<li><p>在最近写的Vue项目中遇到数据绑定的坑，在通过methods的函数更新的data内的数组时，视图层没有进行动态更新，而此时数据层已经确定是产生了变更了。</p>
+</li>
+<li><p>这个问题就涉及到Vue数据绑定的一些无效的情况：</p>
+</li>
+</ul>
+<ol>
+<li>未在data内的定义的变量，Vue无法监听到其变化。</li>
+<li>Vue中无法监听到data内对象的属性的添加，修改，删除。</li>
+<li>Vue中对数组，通过下标直接修改的属性值无法监听。</li>
+</ol>
+<p>所以当涉及到对data内数组的修改时，需要应用数组的push, shift, splice等等来触发Vue视图层的更新。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/06/移动端布局技巧/" itemprop="url">
-              
-                <span itemprop="name">移动端布局技巧</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-06T21:53:54+08:00"
-              content="2018-07-06" >
-          07-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/20/端午/" itemprop="url">
-              
-                <span itemprop="name">端午</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-20T22:30:43+08:00"
-              content="2018-06-20" >
-          06-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/14/myfirstone/" itemprop="url">
-              
-                <span itemprop="name">myfirstone</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-14T12:06:42+08:00"
-              content="2018-06-14" >
-          06-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/14/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-14T11:01:43+08:00"
-              content="2018-06-14" >
-          06-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/19/华为快应用踩坑笔记/" rel="next" title="华为快应用踩坑笔记">
+                <i class="fa fa-chevron-left"></i> 华为快应用踩坑笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/27/Vue工程打包静态文件的路径设置/" rel="prev" title="Vue工程打包静态文件的路径设置">
+                Vue工程打包静态文件的路径设置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -521,6 +385,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -726,6 +594,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

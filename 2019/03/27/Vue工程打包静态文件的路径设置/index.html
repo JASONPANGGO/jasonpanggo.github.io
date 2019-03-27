@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="关于JS-DOM的学习书本阅读至P114，在Ajax知识开始之前。">
+<meta name="description" content="当静态文件打开呈现一片空白的时候，应该是js，css的路径配置不正确。 解决方法：在工程目录中找到config/index.js，将其中的assetsPublicPath值改为’./’12345678build: &amp;#123;  // Template for index.html  index: path.resolve(__dirname, &apos;../dist/index.html&apos;),  //">
 <meta property="og:type" content="article">
-<meta property="og:title" content="端午">
-<meta property="og:url" content="http://yoursite.com/2018/06/20/端午/index.html">
+<meta property="og:title" content="Vue工程打包静态文件的路径设置">
+<meta property="og:url" content="http://yoursite.com/2019/03/27/Vue工程打包静态文件的路径设置/index.html">
 <meta property="og:site_name" content="JasonPang&#39;s">
-<meta property="og:description" content="关于JS-DOM的学习书本阅读至P114，在Ajax知识开始之前。">
+<meta property="og:description" content="当静态文件打开呈现一片空白的时候，应该是js，css的路径配置不正确。 解决方法：在工程目录中找到config/index.js，将其中的assetsPublicPath值改为’./’12345678build: &amp;#123;  // Template for index.html  index: path.resolve(__dirname, &apos;../dist/index.html&apos;),  //">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-20T14:32:56.326Z">
+<meta property="og:updated_time" content="2019-03-27T15:11:11.840Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="端午">
-<meta name="twitter:description" content="关于JS-DOM的学习书本阅读至P114，在Ajax知识开始之前。">
+<meta name="twitter:title" content="Vue工程打包静态文件的路径设置">
+<meta name="twitter:description" content="当静态文件打开呈现一片空白的时候，应该是js，css的路径配置不正确。 解决方法：在工程目录中找到config/index.js，将其中的assetsPublicPath值改为’./’12345678build: &amp;#123;  // Template for index.html  index: path.resolve(__dirname, &apos;../dist/index.html&apos;),  //">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/20/端午/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/03/27/Vue工程打包静态文件的路径设置/"/>
 
 
 
 
 
-  <title>端午 | JasonPang's</title>
+  <title>Vue工程打包静态文件的路径设置 | JasonPang's</title>
   
 
 
@@ -242,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/20/端午/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/Vue工程打包静态文件的路径设置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jason Pang">
@@ -259,7 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">端午</h1>
+          <h1 class="post-title" itemprop="name headline">Vue工程打包静态文件的路径设置</h1>
         
 
         <div class="post-meta">
@@ -271,8 +271,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-20T22:30:43+08:00">
-                2018-06-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-27T22:59:12+08:00">
+                2019-03-27
               </time>
             
 
@@ -309,7 +309,17 @@
       
 
       
-        <h2 id="关于JS-DOM的学习"><a href="#关于JS-DOM的学习" class="headerlink" title="关于JS-DOM的学习"></a>关于JS-DOM的学习</h2><p>书本阅读至<em>P114</em>，在Ajax知识开始之前。</p>
+        <h2 id="当静态文件打开呈现一片空白的时候，应该是js，css的路径配置不正确。"><a href="#当静态文件打开呈现一片空白的时候，应该是js，css的路径配置不正确。" class="headerlink" title="当静态文件打开呈现一片空白的时候，应该是js，css的路径配置不正确。"></a>当静态文件打开呈现一片空白的时候，应该是js，css的路径配置不正确。</h2><ul>
+<li>解决方法：在工程目录中找到config/index.js，将其中的assetsPublicPath值改为’./’<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">build: &#123;</span><br><span class="line">  <span class="comment">// Template for index.html</span></span><br><span class="line">  index: path.resolve(__dirname, <span class="string">'../dist/index.html'</span>),</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Paths</span></span><br><span class="line">  assetsRoot: path.resolve(__dirname, <span class="string">'../dist'</span>),</span><br><span class="line">  assetsSubDirectory: <span class="string">'static'</span>,</span><br><span class="line">  assetsPublicPath: <span class="string">'./'</span>,</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="当静态文件打开后发现css中引用的图片资源找不到的时候，是webpack配置中css-Loader的配置出现问题"><a href="#当静态文件打开后发现css中引用的图片资源找不到的时候，是webpack配置中css-Loader的配置出现问题" class="headerlink" title="当静态文件打开后发现css中引用的图片资源找不到的时候，是webpack配置中css Loader的配置出现问题"></a>当静态文件打开后发现css中引用的图片资源找不到的时候，是webpack配置中css Loader的配置出现问题</h2><ul>
+<li><p>解决方法：在工程目录中找到build/utils.js，增加一句publicPath:”../../“</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (options.extract) &#123;</span><br><span class="line">      <span class="keyword">return</span> ExtractTextPlugin.extract(&#123;</span><br><span class="line">        use: loaders,</span><br><span class="line">        fallback: <span class="string">'vue-style-loader'</span>,</span><br><span class="line">        publicPath: <span class="string">'../../'</span></span><br><span class="line">      &#125;)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> [<span class="string">'vue-style-loader'</span>].concat(loaders)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>另外<br>当ttc后缀字体资源加载不出的时候，可以检查一下工程目录中build/webpack.base.conf.js中的字体loader配置，并在正则表达式中加上ttc的后缀名</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        test: <span class="regexp">/\.(woff2?|eot|ttf|otf|ttc)(\?.*)?$/</span>,</span><br><span class="line">        loader: <span class="string">'url-loader'</span>,</span><br><span class="line">        options: &#123;</span><br><span class="line">          limit: <span class="number">10000</span>,</span><br><span class="line">          name: utils.assetsPath(<span class="string">'fonts/[name].[hash:7].[ext]'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
@@ -334,8 +344,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/14/myfirstone/" rel="next" title="myfirstone">
-                <i class="fa fa-chevron-left"></i> myfirstone
+              <a href="/2019/03/27/vue数据动态绑定的限制/" rel="next" title="vue数据动态绑定的限制">
+                <i class="fa fa-chevron-left"></i> vue数据动态绑定的限制
               </a>
             
           </div>
@@ -343,10 +353,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/06/移动端布局技巧/" rel="prev" title="移动端布局技巧">
-                移动端布局技巧 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -469,7 +475,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于JS-DOM的学习"><span class="nav-number">1.</span> <span class="nav-text">关于JS-DOM的学习</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#当静态文件打开呈现一片空白的时候，应该是js，css的路径配置不正确。"><span class="nav-number">1.</span> <span class="nav-text">当静态文件打开呈现一片空白的时候，应该是js，css的路径配置不正确。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当静态文件打开后发现css中引用的图片资源找不到的时候，是webpack配置中css-Loader的配置出现问题"><span class="nav-number">2.</span> <span class="nav-text">当静态文件打开后发现css中引用的图片资源找不到的时候，是webpack配置中css Loader的配置出现问题</span></a></li></ol></div>
             
 
           </div>
