@@ -239,6 +239,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/06/移动端布局技巧/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jason Pang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonPang's">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/06/移动端布局技巧/" itemprop="url">移动端布局技巧</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-06T21:53:54+08:00">
+                2018-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="通用技巧"><a href="#通用技巧" class="headerlink" title="通用技巧"></a><strong>通用技巧</strong></h2><ul>
+<li><strong>为了在移动端完美展示效果,需要在head内加一个viewport的meta标签</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span>  <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>width = device-width</code> 表示宽度是设备屏幕的宽度<br><code>initial-scale</code> 表示初始的缩放比例<br><code>minimum-scale</code> 表示最小的缩放比例<br><code>maximum-scale</code> 表示最大的缩放比例<br><code>user-scalable</code> 表示用户是否可以调整缩放比例</p>
+<blockquote>
+<p>以上全部改为 1.0 并且<code>user_scalable</code> 改为no则缩小也不会有滑动条</p>
+</blockquote>
+<h2 id="rem布局"><a href="#rem布局" class="headerlink" title="rem布局"></a><strong>rem布局</strong></h2><ul>
+<li><p><strong>手机淘宝的rem布局处理用JS获取页面宽度，然后对其进行宽度/10的处理，再将其写到html的<code>font-size</code>中：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">refreshRem</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 	<span class="keyword">var</span> docEl = <span class="built_in">window</span>.document.documentElement;</span><br><span class="line">    <span class="keyword">var</span> width = docEl.documentElement.getBoundingClientRect().width;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">var</span> rootSize = width/<span class="number">10</span>;</span><br><span class="line">    docEl.style.fontSize = rootSize + <span class="string">'px'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>DPR（物理像素/逻辑像素）的配置</strong><br><code>&lt;meta name=&quot;flexible&quot; content=&quot;initial-dpr=2,maximum-dpr=3&quot; /&gt;</code></p>
+<h2 id="流体布局"><a href="#流体布局" class="headerlink" title="流体布局"></a><strong>流体布局</strong></h2></li>
+<li><strong>基本思想就是用<code>width: 100%</code>和<code>float</code>，使父子宽度一致并浮动起来</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"wrap"</span>&gt;</span>   </span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*&#123;<span class="attribute">margin</span>: <span class="number">0</span>;<span class="attribute">padding</span>: <span class="number">0</span>&#125;</span><br><span class="line"><span class="selector-id">#wrap</span>  &#123; </span><br><span class="line">   <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">   <span class="attribute">min-width</span>:<span class="number">320px</span>;</span><br><span class="line">   <span class="attribute">max-width</span>:<span class="number">640px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#wrap</span> <span class="selector-tag">img</span>&#123;    <span class="attribute">width</span>: <span class="number">100%</span>;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a><strong>响应式布局</strong></h2><ul>
+<li><strong>基本思想就是：利用媒体查询（@media）设置针对不同尺寸的设备展现不同的效果，用一套css兼容所有设备</strong><br><em>注意写条件的时候，从大值往小值写，否则后面会覆盖前面的</em><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li><p>直接写在<code>&lt;style&gt;</code>内</p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">/* 设置默认的情况显示效果 */</span></span><br><span class="line"><span class="selector-tag">div</span>&#123;    </span><br><span class="line">    <span class="attribute">width</span>:<span class="number">25%</span>;  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background</span>: red; </span><br><span class="line">    <span class="comment">/* css3的盒模型属性，内缩，border算在宽度(width)内 */</span></span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box; </span><br><span class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid green; </span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 平板情况显示效果  */</span></span><br><span class="line">@<span class="keyword">media</span> (max-width:<span class="number">1023px</span>) &#123;   </span><br><span class="line">   <span class="selector-tag">div</span>&#123; </span><br><span class="line">        <span class="attribute">width</span>:<span class="number">50%</span>; <span class="attribute">height</span>: <span class="number">100px</span>;  </span><br><span class="line">        <span class="attribute">background</span>: red;     </span><br><span class="line">        <span class="attribute">box-sizing</span>: border-box;  </span><br><span class="line">        <span class="attribute">border</span>:<span class="number">1px</span> solid green;    </span><br><span class="line">       <span class="attribute">float</span>: left;   </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 大屏手机情况显示效果 */</span></span><br><span class="line">@<span class="keyword">media</span> (max-width:<span class="number">480px</span>) &#123;   </span><br><span class="line"> <span class="selector-tag">div</span>&#123;        </span><br><span class="line">       <span class="attribute">width</span>:<span class="number">100%</span>; <span class="attribute">height</span>: <span class="number">100px</span>; </span><br><span class="line">       <span class="attribute">background</span>: red;     </span><br><span class="line">       <span class="attribute">box-sizing</span>: border-box;   </span><br><span class="line">      <span class="attribute">border</span>:<span class="number">1px</span> solid green;        <span class="attribute">float</span>: left;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将判断条件写在head的link标签内，需要创建对应的css文件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css-1023.css"</span> <span class="attr">media</span>=<span class="string">"(min-width:1024px)"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css-481-1023.css"</span> <span class="attr">media</span>=<span class="string">"(min-width: 481px) and (max-width: 1023px)"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css-480.css"</span> <span class="attr">media</span>=<span class="string">"(max-width: 480px)"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/20/端午/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -646,7 +795,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
