@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>麻辣小煎鸡 · 自贡鲜椒风味 · 完整可视化教程</title>
+<style>
+:root {
+  --red: #c0392b;
+  --red-light: #e74c3c;
+  --orange: #e67e22;
+  --gold: #f39c12;
+  --green: #27ae60;
+  --green-light: #2ecc71;
+  --dark: #1a1a2e;
+  --dark2: #16213e;
+  --card: #0f3460;
+  --text: #eee;
+  --text-dim: #bbb;
+  --chili: #d63031;
+  --sichuan: #fdcb6e;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: linear-gradient(135deg, var(--dark) 0%, var(--dark2) 100%);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+/* Hero */
+.hero {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.hero img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+.hero-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  padding: 60px 30px 30px;
+}
+.hero-title {
+  font-size: 2.4em;
+  font-weight: 800;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+.hero-sub {
+  font-size: 1.1em;
+  color: var(--sichuan);
+  margin-top: 8px;
+}
+.badge {
+  display: inline-block;
+  background: var(--chili);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  margin-right: 8px;
+  margin-top: 10px;
+}
+
+/* Section */
+section { margin-bottom: 50px; }
+.section-title {
+  font-size: 1.6em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-left: 16px;
+  border-left: 4px solid var(--chili);
+}
+
+/* Soul Cards */
+.soul-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.soul-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 20px;
+  transition: transform 0.2s;
+}
+.soul-card:hover { transform: translateY(-4px); }
+.soul-icon { font-size: 2em; margin-bottom: 10px; }
+.soul-label { font-weight: 700; color: var(--sichuan); margin-bottom: 6px; }
+
+/* Timeline */
+.timeline-bar {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 50px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.tl-seg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75em;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  padding: 4px;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+.tl-seg:hover { filter: brightness(1.2); }
+.tl-labels {
+  display: flex;
+  font-size: 0.8em;
+  color: var(--text-dim);
+  margin-bottom: 20px;
+}
+.tl-labels span { flex: 1; text-align: center; }
+
+/* Ingredients */
+.ing-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.ing-table th {
+  background: rgba(192,57,43,0.3);
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+.ing-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.ing-table tr:last-child td { border-bottom: none; }
+.ing-check {
+  width: 18px; height: 18px;
+  accent-color: var(--green);
+  cursor: pointer;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.ing-table tr.checked td { opacity: 0.4; text-decoration: line-through; }
+.ing-group-label {
+  background: rgba(253,203,110,0.1);
+  font-weight: 700;
+  color: var(--sichuan);
+}
+
+/* Steps */
+.step-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  position: relative;
+}
+.step-num {
+  position: absolute;
+  top: -14px; left: 24px;
+  background: var(--chili);
+  color: white;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800;
+  font-size: 1.1em;
+  box-shadow: 0 4px 12px rgba(192,57,43,0.4);
+}
+.step-title {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 12px;
+  padding-left: 20px;
+}
+.step-img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 12px 0;
+  max-height: 300px;
+  object-fit: cover;
+}
+.step-body { color: var(--text-dim); }
+.step-body strong { color: var(--text); }
+
+/* Heat Indicator */
+.heat-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 20px;
+  padding: 6px 14px;
+  margin: 8px 0;
+  font-size: 0.85em;
+}
+.heat-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  animation: pulse 1.2s infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.heat-low { background: #3498db; }
+.heat-med { background: var(--orange); }
+.heat-high { background: var(--red-light); animation-duration: 0.6s; }
+.heat-max { background: #ff0000; animation-duration: 0.3s; }
+
+/* Timer */
+.timer-box {
+  background: rgba(39,174,96,0.15);
+  border: 1px solid rgba(39,174,96,0.3);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.timer-display {
+  font-size: 2em;
+  font-weight: 800;
+  font-family: 'Courier New', monospace;
+  color: var(--green-light);
+  min-width: 100px;
+}
+.timer-btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+.timer-btn:active { transform: scale(0.95); }
+.timer-start { background: var(--green); color: white; }
+.timer-reset { background: rgba(255,255,255,0.1); color: var(--text); }
+.timer-label { font-size: 0.9em; color: var(--text-dim); }
+
+/* Tip Box */
+.tip-box {
+  background: rgba(253,203,110,0.1);
+  border-left: 4px solid var(--sichuan);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 18px;
+  margin: 12px 0;
+  font-size: 0.9em;
+  color: var(--sichuan);
+}
+
+/* Flowchart */
+.flow-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 20px 0;
+}
+.flow-node {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 12px 16px;
+  text-align: center;
+  font-size: 0.85em;
+  min-width: 110px;
+}
+.flow-node .fn-icon { font-size: 1.4em; margin-bottom: 4px; }
+.flow-arrow {
+  font-size: 1.4em;
+  color: var(--chili);
+  padding: 0 6px;
+}
+
+/* Adjust Table */
+.adjust-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.adjust-table th {
+  background: rgba(253,203,110,0.15);
+  padding: 12px 16px;
+  text-align: left;
+  color: var(--sichuan);
+}
+.adjust-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Troubleshoot */
+.trouble-item {
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.trouble-header {
+  padding: 14px 18px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.trouble-header:hover { background: rgba(255,255,255,0.05); }
+.trouble-content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s, padding 0.3s;
+}
+.trouble-item.open .trouble-content {
+  max-height: 200px;
+  padding: 0 18px 16px;
+}
+.trouble-item.open .trouble-arrow { transform: rotate(180deg); }
+.trouble-arrow { transition: transform 0.3s; }
+
+/* Progress bar at top */
+.progress-fixed {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--chili), var(--orange), var(--sichuan));
+  width: 0;
+  transition: width 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero img { height: 260px; }
+  .hero-title { font-size: 1.6em; }
+  .soul-grid { grid-template-columns: 1fr; }
+  .flow-wrap { flex-direction: column; }
+  .flow-arrow { transform: rotate(90deg); }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-fixed"><div class="progress-bar" id="progressBar"></div></div>
+
+<div class="container">
+
+<!-- Hero -->
+<div class="hero">
+  <img src="images/01_成品.png" alt="麻辣小煎鸡成品">
+  <div class="hero-overlay">
+    <div class="hero-title">麻辣小煎鸡</div>
+    <div class="hero-sub">自贡鲜椒风味 · 重麻辣版 · 仔公鸡整只剁块</div>
+    <span class="badge">重麻辣</span>
+    <span class="badge">55分钟</span>
+    <span class="badge">3-4人份</span>
+    <span class="badge">难度:中</span>
+  </div>
+</div>
+
+<!-- Soul -->
+<section>
+  <div class="section-title">这道菜的灵魂</div>
+  <div class="soul-grid">
+    <div class="soul-card">
+      <div class="soul-icon">&#x1F414;</div>
+      <div class="soul-label">仔公鸡</div>
+      <div>肉紧皮薄出鸡油，是"香"的来源。不用冷冻鸡或老母鸡。</div>
+    </div>
+    <div class="soul-card">
+      <div class="soul-icon">&#x1F373;</div>
+      <div class="soul-label">半煎半炒</div>
+      <div>中大火少油煎到两面金黄、逼出鸡油——外香里嫩的关键。</div>
+    </div>
+    <div class="soul-card">
+      <div class="soul-icon">&#x1F336;</div>
+      <div class="soul-label">两套辣</div>
+      <div>干辣椒+花椒=糊辣香+麻（打底）；仔姜+红绿鲜椒=鲜辣清香（后放抢鲜）。</div>
+    </div>
+    <div class="soul-card">
+      <div class="soul-icon">&#x1F9C4;</div>
+      <div class="soul-label">仔姜是主角</div>
+      <div>嫩姜切片大量吃、脆嫩微辣带清香。绝不能用老姜替代。</div>
+    </div>
+  </div>
+</section>
+
+<!-- Visual Flow -->
+<section>
+  <div class="section-title">烹饪逻辑流程图</div>
+  <div class="flow-wrap">
+    <div class="flow-node"><div class="fn-icon">&#x1F52A;</div>剁块洗净<br><small>2-3cm</small></div>
+    <div class="flow-arrow">&#x27A1;</div>
+    <div class="flow-node"><div class="fn-icon">&#x1F9C2;</div>腌制30min<br><small>抓打上劲</small></div>
+    <div class="flow-arrow">&#x27A1;</div>
+    <div class="flow-node"><div class="fn-icon">&#x1F525;</div>半煎鸡块<br><small>中大火6-8min</small></div>
+    <div class="flow-arrow">&#x27A1;</div>
+    <div class="flow-node"><div class="fn-icon">&#x1F9C5;</div>小火爆香<br><small>豆瓣+干椒+花椒</small></div>
+    <div class="flow-arrow">&#x27A1;</div>
+    <div class="flow-node"><div class="fn-icon">&#x1F525;&#x1F525;</div>回锅猛炒<br><small>鲜椒仔姜2min</small></div>
+    <div class="flow-arrow">&#x27A1;</div>
+    <div class="flow-node"><div class="fn-icon">&#x1F37D;</div>调味起锅<br><small>点香油撒葱花</small></div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section>
+  <div class="section-title">55 分钟时间线</div>
+  <div class="timeline-bar">
+    <div class="tl-seg" style="flex:10;background:var(--green)">剁块洗净<br>10'</div>
+    <div class="tl-seg" style="flex:2;background:#8e44ad">下腌料<br>2'</div>
+    <div class="tl-seg" style="flex:18;background:#2980b9">腌制静置+备料<br>18'</div>
+    <div class="tl-seg" style="flex:10;background:var(--orange)">半煎鸡块<br>10'</div>
+    <div class="tl-seg" style="flex:3;background:var(--red)">爆香<br>3'</div>
+    <div class="tl-seg" style="flex:5;background:#c0392b">回锅爆炒<br>5'</div>
+    <div class="tl-seg" style="flex:2;background:var(--gold)">起锅<br>2'</div>
+  </div>
+  <div class="tl-labels">
+    <span>0</span><span>10</span><span>12</span><span>30</span><span>40</span><span>43</span><span>48</span><span>50min</span>
+  </div>
+</section>
+
+<!-- Ingredients -->
+<section>
+  <div class="section-title">采购清单（点击勾选已备好的）</div>
+  <table class="ing-table" id="ingTable">
+    <thead><tr><th></th><th>食材</th><th>用量</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr class="ing-group-label"><td colspan="4">主料</td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>仔公鸡（整只）</td><td>1只 约1000-1200g</td><td>让摊主处理，自己剁2-3cm小块</td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>仔姜（嫩姜）</td><td>150g</td><td>切厚片，可多不可少</td></tr>
+      <tr class="ing-group-label"><td colspan="4">辣与麻（重麻辣档）</td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>干辣椒（二荆条干椒）</td><td>30g</td><td>剪段去大部分籽</td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>红二荆条（新鲜）</td><td>4-5根</td><td>切滚刀段</td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>青二荆条/螺丝椒</td><td>4-5根</td><td>青辣香，红绿搭配</td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>小米辣</td><td>8-10根</td><td>纯增辣，怕辣减至3-4根</td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>花椒（青+红）</td><td>共8-10g</td><td>重麻可加到12g</td></tr>
+      <tr class="ing-group-label"><td colspan="4">去腥爆香</td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>大蒜</td><td>1整头 约10瓣</td><td>切片</td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>老姜</td><td>20g</td><td>切片（仅去腥爆香用）</td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>大葱</td><td>1根</td><td>葱白切段、葱绿切花</td></tr>
+      <tr class="ing-group-label"><td colspan="4">腌料</td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>料酒</td><td>2汤匙</td><td></td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>生抽</td><td>1汤匙</td><td></td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>盐</td><td>3g</td><td></td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>白胡椒粉</td><td>2g</td><td></td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>红薯淀粉</td><td>15g</td><td>比玉米淀粉更耐煎</td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>食用油（封腌用）</td><td>1汤匙</td><td>最后拌入锁水</td></tr>
+      <tr class="ing-group-label"><td colspan="4">炒制调味</td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>郫县豆瓣酱（剁细）</td><td>1汤匙</td><td>增酱香红油</td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>生抽</td><td>1汤匙</td><td></td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>老抽</td><td>半茶匙</td><td>仅上色</td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>白糖</td><td>3g</td><td>提鲜平衡辣</td></tr>
+      <tr><td><input type="checkbox" class="ing-check"></td><td>炒菜油</td><td>3-4汤匙</td><td>半煎用</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Steps -->
+<section>
+  <div class="section-title">分步操作</div>
+
+  <!-- Step 1 -->
+  <div class="step-card">
+    <div class="step-num">1</div>
+    <div class="step-title">剁块与去腥</div>
+    <div class="step-body">
+      <p>整鸡剁成 <strong>2-3cm 见方</strong>的小块（带骨带皮）。清水加一小把盐抓洗2遍，洗净血水，<strong>彻底沥干或厨房纸吸干</strong>。</p>
+      <div class="heat-indicator">
+        <span>火力：</span>
+        <span>无需开火</span>
+      </div>
+      <div class="tip-box">块太大不入味、里外不同熟；太小久炒易柴。2-3cm 是煎炒两不误的黄金尺寸。</div>
+    </div>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="step-card">
+    <div class="step-num">2</div>
+    <div class="step-title">腌制入味（30分钟）</div>
+    <div class="step-body">
+      <p>鸡块加料酒、生抽、盐、白胡椒粉，<strong>用手抓打到发黏、汤汁被吸收</strong>（约1分钟）；再加淀粉抓匀形成薄浆；最后淋1汤匙油拌匀封住水分。静置 <strong>30 分钟</strong>。</p>
+      <div class="timer-box">
+        <div class="timer-label">腌制倒计时：</div>
+        <div class="timer-display" id="timer1">30:00</div>
+        <button class="timer-btn timer-start" onclick="startTimer('timer1',30)">开始 30min</button>
+        <button class="timer-btn timer-reset" onclick="resetTimer('timer1',30)">重置</button>
+      </div>
+      <div class="tip-box">用红薯淀粉比玉米淀粉更耐煎、外壳更香脆。最后那勺油是锁水关键，别省。</div>
+    </div>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="step-card">
+    <div class="step-num">3</div>
+    <div class="step-title">备料（腌制时同步）</div>
+    <img class="step-img" src="images/02_备料.png" alt="备料">
+    <div class="step-body">
+      <p>干辣椒剪2cm段、抖掉大部分籽；仔姜切厚片；红绿二荆条切滚刀段、小米辣切段；蒜切片、老姜切片、葱白切段葱绿切花；花椒单独备一碟。</p>
+      <div class="tip-box"><strong>所有配料必须备齐再开火</strong>——后段全程猛火，没时间现切。这是不翻车的铁律。</div>
+    </div>
+  </div>
+
+  <!-- Step 4 -->
+  <div class="step-card">
+    <div class="step-num">4</div>
+    <div class="step-title">半煎鸡块（外香里嫩核心步）</div>
+    <img class="step-img" src="images/03_半煎.png" alt="半煎鸡块">
+    <div class="step-body">
+      <p>锅烧热下3-4汤匙油，鸡块<strong>单层平铺</strong>下锅（分批煎，不堆叠）。先不翻动，煎 2-3 分钟定型上色，翻面，煎到<strong>两面金黄、鸡皮出油、边缘微焦</strong>，约 6-8 分钟。盛出备用。</p>
+      <div class="heat-indicator">
+        <div class="heat-dot heat-high"></div>
+        <span>中大火 · 持续听到"滋啦"声</span>
+      </div>
+      <div class="timer-box">
+        <div class="timer-label">煎制计时：</div>
+        <div class="timer-display" id="timer2">08:00</div>
+        <button class="timer-btn timer-start" onclick="startTimer('timer2',8)">开始 8min</button>
+        <button class="timer-btn timer-reset" onclick="resetTimer('timer2',8)">重置</button>
+      </div>
+      <div class="tip-box">油温别低！低温会"煮"出水、发白不香。鸡块能轻松滑动 = 底面已成壳，可以翻了。</div>
+    </div>
+  </div>
+
+  <!-- Step 5 -->
+  <div class="step-card">
+    <div class="step-num">5</div>
+    <div class="step-title">爆香打底（最容易翻车的一步）</div>
+    <div class="step-body">
+      <p>锅留底油（约1汤匙），<strong>转小火</strong>下郫县豆瓣炒出红油→干辣椒段+花椒，<strong>小火煸出糊辣香</strong>（辣椒变枣红、闻到香味即可）→下老姜片、蒜片炒香。</p>
+      <div class="heat-indicator">
+        <div class="heat-dot heat-low"></div>
+        <span>小火 · 宁可多炒几秒也别烧糊</span>
+      </div>
+      <div class="tip-box" style="border-left-color:var(--red);color:var(--red-light);">
+        <strong>翻车警告：</strong>豆瓣、干辣椒、花椒必须小火！一糊全锅发苦，没得救。颜色到枣红即立刻下一步。
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 6 -->
+  <div class="step-card">
+    <div class="step-num">6</div>
+    <div class="step-title">回锅猛火爆炒</div>
+    <div class="step-body">
+      <p><strong>转最大火</strong>，鸡块回锅翻炒裹红油；沿锅边烹入生抽、老抽翻匀上色。接着下<strong>仔姜片+红绿二荆条+小米辣</strong>，猛火爆炒约 2 分钟——仔姜鲜椒<strong>保持脆口</strong>，断生出香即可！</p>
+      <div class="heat-indicator">
+        <div class="heat-dot heat-max"></div>
+        <span>最大火 · 锅气要起来</span>
+      </div>
+      <div class="timer-box">
+        <div class="timer-label">爆炒倒计时：</div>
+        <div class="timer-display" id="timer3">02:00</div>
+        <button class="timer-btn timer-start" onclick="startTimer('timer3',2)">开始 2min</button>
+        <button class="timer-btn timer-reset" onclick="resetTimer('timer3',2)">重置</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 7 -->
+  <div class="step-card">
+    <div class="step-num">7</div>
+    <div class="step-title">调味起锅</div>
+    <div class="step-body">
+      <p>加白糖3g、盐按口味1-2g（味精可选），快速兜匀尝味；关火淋几滴香油、撒葱花，可再补撒<strong>现舂花椒面</strong>加强麻味。装盘即成。</p>
+      <div class="heat-indicator">
+        <div class="heat-dot heat-low"></div>
+        <span>关火 · 余温兜匀</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key Formula -->
+<section>
+  <div class="section-title">火候与调味口诀</div>
+  <div class="soul-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+    <div class="soul-card" style="border-color:var(--chili)">
+      <div class="soul-icon">&#x1F525;</div>
+      <div class="soul-label">一煎二爆</div>
+      鸡块中大火慢煎逼油，配料最后猛火抢鲜
+    </div>
+    <div class="soul-card" style="border-color:var(--orange)">
+      <div class="soul-icon">&#x1F9C5;</div>
+      <div class="soul-label">辣椒花椒小火煸</div>
+      出香不出糊，麻辣香的底子
+    </div>
+    <div class="soul-card" style="border-color:var(--green)">
+      <div class="soul-icon">&#x1F96C;</div>
+      <div class="soul-label">仔姜鲜椒最后放</div>
+      保脆保鲜，久炒就废了
+    </div>
+    <div class="soul-card" style="border-color:var(--gold)">
+      <div class="soul-icon">&#x1F36C;</div>
+      <div class="soul-label">糖是隐味</div>
+      3g不为甜，把辣味托得更圆润
+    </div>
+  </div>
+</section>
+
+<!-- Adjust -->
+<section>
+  <div class="section-title">口味微调（按人调档）</div>
+  <table class="adjust-table">
+    <thead><tr><th>想要的效果</th><th>怎么调</th></tr></thead>
+    <tbody>
+      <tr><td>&#x1F525; 更麻</td><td>花椒加到12g，起锅再撒花椒面；青花椒占比调高</td></tr>
+      <tr><td>&#x1F336; 更辣</td><td>小米辣加倍、干辣椒不去籽</td></tr>
+      <tr><td>&#x1F372; 更下饭有酱香</td><td>郫县豆瓣加到1.5汤匙</td></tr>
+      <tr><td>&#x1F33F; 更清爽鲜辣</td><td>省豆瓣和干辣椒，只留花椒+仔姜+鲜椒，走"鲜锅"路线</td></tr>
+      <tr><td>&#x1F476; 孩子/长辈同桌</td><td>干辣椒花椒减半、小米辣去掉，仔姜鲜椒照旧</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Troubleshoot -->
+<section>
+  <div class="section-title">失败排查（点击展开）</div>
+  <div class="trouble-item">
+    <div class="trouble-header" onclick="toggleTrouble(this)">
+      <span>鸡肉发柴、咬不动</span>
+      <span class="trouble-arrow">&#x25BC;</span>
+    </div>
+    <div class="trouble-content"><p><strong>原因：</strong>用了老鸡，或煎后又炒太久。<br><strong>解决：</strong>换仔公鸡；配料下锅后总翻炒控制在2-3分钟。</p></div>
+  </div>
+  <div class="trouble-item">
+    <div class="trouble-header" onclick="toggleTrouble(this)">
+      <span>出水、煎不香、发白</span>
+      <span class="trouble-arrow">&#x25BC;</span>
+    </div>
+    <div class="trouble-content"><p><strong>原因：</strong>鸡块没沥干；油温太低；一次下太多堆叠。<br><strong>解决：</strong>彻底吸干水；中大火热油；分批单层煎。</p></div>
+  </div>
+  <div class="trouble-item">
+    <div class="trouble-header" onclick="toggleTrouble(this)">
+      <span>整锅发苦</span>
+      <span class="trouble-arrow">&#x25BC;</span>
+    </div>
+    <div class="trouble-content"><p><strong>原因：</strong>干辣椒/花椒/豆瓣炒糊了。<br><strong>解决：</strong>全程小火煸香，颜色到枣红就下一步。</p></div>
+  </div>
+  <div class="trouble-item">
+    <div class="trouble-header" onclick="toggleTrouble(this)">
+      <span>不入味、寡淡</span>
+      <span class="trouble-arrow">&#x25BC;</span>
+    </div>
+    <div class="trouble-content"><p><strong>原因：</strong>腌制时间不够；没抓打上劲。<br><strong>解决：</strong>腌足30分钟，抓到发黏；起锅前尝味补盐。</p></div>
+  </div>
+  <div class="trouble-item">
+    <div class="trouble-header" onclick="toggleTrouble(this)">
+      <span>仔姜软塌无脆感</span>
+      <span class="trouble-arrow">&#x25BC;</span>
+    </div>
+    <div class="trouble-content"><p><strong>原因：</strong>仔姜下锅太早、炒太久。<br><strong>解决：</strong>仔姜和鲜椒最后2分钟才下，猛火快炒。</p></div>
+  </div>
+  <div class="trouble-item">
+    <div class="trouble-header" onclick="toggleTrouble(this)">
+      <span>油腻</span>
+      <span class="trouble-arrow">&#x25BC;</span>
+    </div>
+    <div class="trouble-content"><p><strong>原因：</strong>鸡油没逼够；油放太多。<br><strong>解决：</strong>煎足时间逼出鸡油；半煎油量控制在3-4汤匙。</p></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<section style="text-align:center;color:var(--text-dim);padding:40px 0;">
+  <p>配一碗冒尖白米饭 + 紫菜蛋花汤 / 冰镇酸梅汤</p>
+  <p style="margin-top:8px;font-size:0.85em;">吃剩第二天回锅加一把蒜苗再爆，更香 &#x1F60B;</p>
+</section>
+
+</div>
+
+<script>
+// Progress bar on scroll
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  document.getElementById('progressBar').style.width = pct + '%';
+});
+
+// Ingredient check
+document.querySelectorAll('.ing-check').forEach(cb => {
+  cb.addEventListener('change', function() {
+    this.closest('tr').classList.toggle('checked', this.checked);
+  });
+});
+
+// Timers
+const timers = {};
+function startTimer(id, mins) {
+  if (timers[id]) clearInterval(timers[id].interval);
+  let total = mins * 60;
+  const el = document.getElementById(id);
+  timers[id] = { total };
+  timers[id].interval = setInterval(() => {
+    timers[id].total--;
+    if (timers[id].total <= 0) {
+      clearInterval(timers[id].interval);
+      el.textContent = "00:00";
+      el.style.color = '#e74c3c';
+      try { new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1jdH+Kj4+NiX53cGhiYGRsdHyEi4+RkI2IfnRsZF9hZm10fIWLj5GQjId+c2xkX2BkbXR9hYuPkZCNh35za2RfYWVtdH2FjI+RkI2HfnNrZF9hZW10fYaMj5GQjYd+c2tkX2FlbXR9hoyPkZCNh35za2RfYWVtdH2GjI+RkI2HfnNrZGBhZm10fYaMj5GQjYd+c2tkYGFlbXR9hoyPkQ==').play(); } catch(e){}
+      return;
+    }
+    const m = Math.floor(timers[id].total / 60);
+    const s = timers[id].total % 60;
+    el.textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+    el.style.color = timers[id].total <= 10 ? '#e74c3c' : '#2ecc71';
+  }, 1000);
+}
+function resetTimer(id, mins) {
+  if (timers[id]) clearInterval(timers[id].interval);
+  const el = document.getElementById(id);
+  el.textContent = String(mins).padStart(2,'0') + ':00';
+  el.style.color = '#2ecc71';
+}
+
+// Troubleshoot accordion
+function toggleTrouble(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
